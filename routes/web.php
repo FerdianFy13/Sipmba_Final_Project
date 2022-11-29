@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// @auth
+// login Route
+Route::get('/masuk', [LoginController::class, 'index'])->middleware('guest');
+Route::post('/masuk', [LoginController::class, 'login']);
+Route::post('/masuk/logout', [LoginController::class, 'logout']);
+
+// Register Route
+Route::get('/daftar', [RegisterController::class, 'index'])->middleware(
+    'guest'
+);
+Route::post('/daftar', [RegisterController::class, 'register']);
