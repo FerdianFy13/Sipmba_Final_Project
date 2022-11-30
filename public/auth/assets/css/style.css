@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   background: #b93737; /* fallback for old browsers */
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
@@ -65,4 +66,30 @@ p {
   border-color: #b93737;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
   border-radius: 10px;
+  outline: 2;
+  outline-color: black;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+}
+
+canvas {
+  display: block;
+  /* vertical-align: bottom; */
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #b93737;
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
