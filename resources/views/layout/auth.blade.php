@@ -25,9 +25,21 @@
 </head>
 
 <body>
+    {{-- three.js --}}
+    <div id="particles-js">
+        <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;">
+        </canvas>
+    </div>
+    {{-- <div id="particles"></div> --}}
+
     <div class="container mt-5 mb-5">
         @yield('auth')
     </div>
+
+    {{-- three.js javascript library --}}
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="{{ asset('auth/assets/js/app.js') }}"></script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="{{ asset('dist/js/bootstrap.min.js') }}"></script>

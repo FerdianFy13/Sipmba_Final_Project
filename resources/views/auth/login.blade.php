@@ -3,7 +3,7 @@
 @section('auth')
 <div class="row justify-content-center">
     <div class="col-lg-5">
-        <div class="card w-70">
+        <div class="card w-60" style="border-radius: 20px">
             <div class="card-body">
                 @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -29,7 +29,8 @@
                         <h4 class="h4 mb-4 fw-normal text-center">PMI Kabupaten Bantul</h4>
                         <div class="form-floating">
                             <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                                id="email" placeholder="name@example.com" value="{{ old('email') }}" autofocus required>
+                                id="email" placeholder="name@example.com" value="{{ old('email') }}" autofocus required
+                                style="border-radius: 10px">
                             <label for="email">Email</label>
                             @error('email')
                             <div class="invalid-feedback">
@@ -39,11 +40,12 @@
                         </div>
                         <div class="form-floating">
                             <input type="password" class="form-control" name="password" id="password"
-                                placeholder="Password" required>
+                                placeholder="Password" required style="border-radius: 10px">
                             <label for="password">Kata Sandi</label>
                         </div>
-                        <button class="w-100 btn btn-lg mt-3 text-light" style="background-color: #b93737"
-                            type="submit"><i class="bi bi-box-arrow-in-right me-2"></i>Masuk</button>
+                        <button class="w-100 btn btn-lg mt-3 text-light"
+                            style="background-color: #b93737; border-radius: 10px;" type="submit"><i
+                                class="bi bi-box-arrow-in-right me-2"></i>Masuk</button>
                     </form>
                     <small class="mt-3 d-block text-center text-dark">Tidak memiliki akun? <a href="/daftar"
                             class="text-decoration-none text-danger">Daftar Sekarang!</a></small>
