@@ -27,7 +27,7 @@ class LoginController extends Controller
         if (Auth::attempt($validator)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/home/formulir');
+            return redirect()->intended('/dashboard');
         }
 
         return back()->with('failed', 'Login Failed!');
@@ -41,6 +41,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

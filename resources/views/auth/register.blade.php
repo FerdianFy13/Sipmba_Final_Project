@@ -3,14 +3,14 @@
 @section('auth')
 <div class="row justify-content-center">
     <div class="col-lg-5">
-        <div class="card w-60" style="border-radius: 20px">
+        <div class="card w-60 p-5 mt-3" style="border-radius: 20px">
             <div class="card-body">
                 <main class="form-registration">
-                    <form action="/register" method="POST">
+                    <form action="/daftar" method="POST">
                         @csrf
-                        <img class="mt-2 mb-4" src="{{ asset('auth/assets/img/logo.png') }}" alt="logo" width="120"
-                            height="120" style="display:block; margin:auto;">
-                        <h3 class="h3 mb-3 fw-normal text-center">Daftar Akun SIPMBA</h3>
+                        {{-- <img class="mt-2 mb-4" src="{{ asset('auth/assets/img/logo.png') }}" alt="logo" width="120"
+                            height="120" style="display:block; margin:auto;"> --}}
+                        <h3 class="h3 mb-3 fw-normal text-center">Pendaftaran Akun SIPMBA</h3>
                         <div class="form-floating">
                             <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik"
                                 id="nik" placeholder="NIK" autofocus required value="{{ old('nik') }}"
@@ -59,7 +59,7 @@
                             style="background-color: #b93737; border-radius: 10px;" type="submit"
                             style="border-radius: 20px"><i class="bi bi-box-arrow-in-right me-2"></i>Daftar</button>
                     </form>
-                    <small class="mt-3 d-block text-center text-dark">Sudah memiliki akun? <a href="/masuk"
+                    <small class="mt-3 d-block text-center text-dark">Sudah memiliki akun? <a href="/login"
                             class="text-decoration-none text-danger">Masuk</a></small>
                     {{-- <p class="mt-5 mb-3 text-muted">&copy; Ferdi 2020 – 2021</p> --}}
                 </main>
