@@ -2,8 +2,8 @@
 
 @section('auth')
 <div class="row justify-content-center">
-    <div class="col-lg-5">
-        <div class="card w-60" style="border-radius: 20px">
+    <div class="col-lg-6">
+        <div class="card w-60 p-5 mt-3" style="border-radius: 20px">
             <div class="card-body">
                 @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -20,13 +20,14 @@
                 @endif
 
                 <main class="form-signin">
-                    <form action="/" method="POST">
+                    <form action="/login" method="POST">
                         @csrf
-                        <img class="mt-2 mb-4" src="{{ asset('auth/assets/img/logo.png') }}" alt="logo" width="120"
-                            height="120" style="display:block; margin:auto;">
-                        <h3 class="h3 mb-3 fw-normal text-center">Selamat Datang</h3>
-                        <h4 class="h4 mb-0 fw-normal text-center">Sistem Informasi Pendaftaran</h4>
-                        <h4 class="h4 mb-4 fw-normal text-center">PMI Kabupaten Bantul</h4>
+                        {{-- <img class="mt-2 mb-4" src="{{ asset('auth/assets/img/logo.png') }}" alt="logo" width="120"
+                            height="120" style="display:block; margin:auto;"> --}}
+                        {{-- <h3 class="h3 mb-3 fw-normal text-center">Selamat Datang</h3> --}}
+                        <h3 class="h3 mb-3 fw-bold text-start">Masuk</h3>
+                        <h4 class="h4 mb-4 fw-normal text-start">Selamat Datang, silahkan masuk untuk melanjutkan!</h4>
+                        {{-- <h4 class="h4 mb-4 fw-normal text-center">PMI Kabupaten Bantul</h4> --}}
                         <div class="form-floating">
                             <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                                 id="email" placeholder="name@example.com" value="{{ old('email') }}" autofocus required
