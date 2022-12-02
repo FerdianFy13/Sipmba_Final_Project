@@ -15,4 +15,9 @@ class Category extends Model
     {
         return $this->hasMany(Kuizioner::class);
     }
+
+    public function officerData()
+    {
+        return $this->hasMany(OfficerData::class);
+    }
 }

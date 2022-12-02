@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\KuizionerController;
 use App\Http\Controllers\Backend\NewsController;
+use App\Http\Controllers\Backend\OfficerdataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,3 +49,8 @@ Route::resource('/berita', NewsController::class)->middleware('auth');
 
 // kuizioner
 Route::resource('/kuisioner', KuizionerController::class)->middleware('auth');
+
+// officer data
+Route::resource('/data-petugas', OfficerdataController::class)->middleware(
+    'auth'
+);
