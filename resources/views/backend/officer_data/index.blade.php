@@ -30,28 +30,33 @@
 </div>
 
 <div class="table-responsive col-md-12">
-    <a href="/kuisioner/create" class="btn btn-warning mb-2">Tambahkan Kuisioner</a>
+    <a href="/data-petugas/create" class="btn btn-warning mb-2">Tambahkan Data Petugas</a>
     <table class="table table-striped table-secondary table-sm table-bordered border-light mt-3">
         <thead>
             <tr class="text-center">
                 <th scope="col">No</th>
-                <th scope="col">Pertanyaan</th>
-                <th scope="col">Kategori</th>
+                <th scope="col">Nama Lengkap</th>
+                <th scope="col">ID PMI</th>
+                <th scope="col">Jabatan</th>
+                <th scope="col">Telepon</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($quiz as $quizs)
+            @foreach ($datapetugas as $data)
             <tr>
                 <td class="text-center">{{ $loop->iteration }}</td>
-                <td>{{ $quizs->question }}</td>
-                <td class="text-center">{{ $quizs->category->name }}</td>
+                <td>{{ $data->name }}</td>
+                <td class="text-center">{{ $data->pmi_id }}</td>
+                <td>{{ $data->job }}</td>
+                <td>{{ $data->telepon }}</td>
+                {{-- <td class="text-center">{{ $data->category->gender }}</td> --}}
                 <td class="text-center">
-                    {{-- <a href="{{ route('kuisioner.show', $quizs->id) }}}}" class="badge bg-primary"><i
-                            class="bi bi-eye"></i></a> --}}
-                    <a href="{{ route('kuisioner.edit', $quizs->id) }}" class="badge bg-success"><i
+                    <a href="{{ route('data-petugas.show', $data->id) }}}}" class="badge bg-primary"><i
+                            class="bi bi-eye"></i></a>
+                    <a href="{{ route('data-petugas.edit', $data->id) }}" class="badge bg-success"><i
                             class="bi bi-pencil-square"></i></></a>
-                    <form action="{{ route('kuisioner.destroy', $quizs->id) }}}}" method="post" class="d-inline">
+                    <form action="{{ route('data-petugas.destroy', $data->id) }}}}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="badge bg-danger border-0"

@@ -10,7 +10,7 @@
         <div class="mb-3">
             <label for="title" class="form-label">Judul</label>
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-                value="{{ old('title') }}" required autofocus>
+                value="{{ old('title') }}" required>
             @error('title')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -30,7 +30,7 @@
         <div class="mb-3">
             <label for="author" class="form-label">Penulis</label>
             <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author"
-                value="{{ old('author') }}" required autofocus>
+                value="{{ old('author') }}" required>
             @error('author')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -51,7 +51,7 @@
         <div class="mb-3">
             <label for="body" class="form-label">Isi Berita</label>
             <input type="hidden" class="form-control @error('body') is-invalid @enderror" id="body" name="body"
-                value="{{ old('body') }}" required autofocus>
+                value="{{ old('body') }}" required>
             @error('body')
             <p class="text-danger">{{ $message }}</p>
             @enderror

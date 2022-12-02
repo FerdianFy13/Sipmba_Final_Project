@@ -15,7 +15,7 @@
                         Darah</span></a>
             </li>
             <li class="dropdown {{ Request::is('data-petugas*') ? 'active' : '' }}">
-                <a href="#" class="nav-link"><i data-feather="users"></i><span>Data Petugas</span></a>
+                <a href="/data-petugas" class="nav-link"><i data-feather="users"></i><span>Data Petugas</span></a>
             </li>
             <li class="dropdown {{ Request::is('data-pendonor*') ? 'active' : '' }}">
                 <a href="#" class="nav-link"><i data-feather="bar-chart-2"></i><span>Data Pendonor</span></a>

@@ -26,7 +26,7 @@
                             height="120" style="display:block; margin:auto;"> --}}
                         {{-- <h3 class="h3 mb-3 fw-normal text-center">Selamat Datang</h3> --}}
                         <h3 class="h3 mb-3 fw-bold text-start">Masuk</h3>
-                        <h4 class="h4 mb-4 fw-normal text-start">Selamat Datang, silahkan masuk untuk melanjutkan!</h4>
+                        <h4 class="h4 mb-4 fw-normal text-start">Selamat Datang, Silahkan masuk untuk melanjutkan.</h4>
                         {{-- <h4 class="h4 mb-4 fw-normal text-center">PMI Kabupaten Bantul</h4> --}}
                         <div class="form-floating">
                             <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"

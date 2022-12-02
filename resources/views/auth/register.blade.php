@@ -2,7 +2,7 @@
 
 @section('auth')
 <div class="row justify-content-center">
-    <div class="col-lg-5">
+    <div class="col-lg-6">
         <div class="card w-60 p-5 mt-3" style="border-radius: 20px">
             <div class="card-body">
                 <main class="form-registration">
@@ -10,7 +10,10 @@
                         @csrf
                         {{-- <img class="mt-2 mb-4" src="{{ asset('auth/assets/img/logo.png') }}" alt="logo" width="120"
                             height="120" style="display:block; margin:auto;"> --}}
-                        <h3 class="h3 mb-3 fw-normal text-center">Pendaftaran Akun SIPMBA</h3>
+                        <h3 class="h3 mb-3 fw-bold text-start">Daftar Akun</h3>
+                        <h4 class="h5 mb-4 fw-normal text-start text-justify">Selamat Datang, Silahkan lengkapi data
+                            sesuai dengan
+                            KTP untuk melanjutkan!</h4>
                         <div class="form-floating">
                             <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik"
                                 id="nik" placeholder="NIK" autofocus required value="{{ old('nik') }}"

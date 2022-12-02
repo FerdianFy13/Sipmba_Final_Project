@@ -18,11 +18,13 @@ class CategorySeeder extends Seeder
         //
         Category::factory()->create([
             'name' => 'Kuisioner 1',
+            'gender' => 'Pria',
             // 'name' => 'Kuisioner 2',
         ]);
         Category::factory()->create([
             // 'name' => 'Kuisioner 1',
             'name' => 'Kuisioner 2',
+            'gender' => 'Wanita',
         ]);
     }
 }

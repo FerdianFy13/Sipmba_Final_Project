@@ -11,7 +11,7 @@
         <div class="mb-3">
             <label for="title" class="form-label">Judul</label>
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-                value="{{ old('title', $news->title) }}" required autofocus>
+                value="{{ old('title', $news->title) }}" required>
             @error('title')
             <div class="invalid-feedback">
                 {{ $message }}
