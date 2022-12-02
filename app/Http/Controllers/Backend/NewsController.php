@@ -67,7 +67,7 @@ class NewsController extends Controller
 
         return redirect('/berita')->with(
             'success',
-            'New Post created successfully add'
+            'New Article created successfully add'
         );
     }
 
@@ -141,7 +141,7 @@ class NewsController extends Controller
 
         return redirect('/berita')->with(
             'update',
-            'Post update successfully update'
+            'Article update successfully update'
         );
     }
 

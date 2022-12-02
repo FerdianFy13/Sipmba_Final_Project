@@ -62,7 +62,7 @@
             <input id="body" type="hidden" name="body" value="{{ old('body', $news->body) }}">
             <trix-editor input="body"></trix-editor>
         </div>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
 <script>

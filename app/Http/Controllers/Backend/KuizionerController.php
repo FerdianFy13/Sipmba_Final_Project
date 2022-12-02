@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Kuizioner;
 use Illuminate\Http\Request;
 
 class KuizionerController extends Controller
@@ -15,8 +17,11 @@ class KuizionerController extends Controller
     public function index()
     {
         //
-        return view('backend.kuizioner.kuizioner', [
+        $kuizioner = Kuizioner::with('category')->get();
+
+        return view('backend.kuizioner.index', [
             'title' => 'Kuisioner',
+            'quiz' => $kuizioner,
         ]);
     }
 
@@ -28,6 +33,10 @@ class KuizionerController extends Controller
     public function create()
     {
         //
+        return view('backend.kuizioner.create', [
+            'title' => 'Create Kuisioner',
+            'categories' => Category::all(),
+        ]);
     }
 
     /**
@@ -39,6 +48,18 @@ class KuizionerController extends Controller
     public function store(Request $request)
     {
         //
+        $validation = $request->validate([
+            'category_id' => 'required',
+            'question' => ['required', 'min:2'],
+        ]);
+
+        // Create insert to table post a view in my portfolio and portofolio a front-end layout
+        Kuizioner::create($validation);
+
+        return redirect('/kuisioner')->with(
+            'success',
+            'New Post created successfully add'
+        );
     }
 
     /**
@@ -61,6 +82,13 @@ class KuizionerController extends Controller
     public function edit($id)
     {
         //
+        $quiz = Kuizioner::findOrFail($id);
+
+        return view('backend.kuizioner.update', [
+            'title' => 'Update Kuisioner',
+            'categories' => Category::all(),
+            'quiz' => $quiz,
+        ]);
     }
 
     /**
@@ -73,6 +101,18 @@ class KuizionerController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validation = $request->validate([
+            'category_id' => 'required',
+            'question' => ['required', 'min:2'],
+        ]);
+
+        // Create insert to table post a view in my portfolio and portofolio a front-end layout
+        Kuizioner::whereId($id)->update($validation);
+
+        return redirect('/kuisioner')->with(
+            'update',
+            'Questionnaire successfully update'
+        );
     }
 
     /**
@@ -84,5 +124,11 @@ class KuizionerController extends Controller
     public function destroy($id)
     {
         //
+        $quizs = Kuizioner::findOrFail($id);
+        $quizs->delete();
+        return redirect('kuisioner')->with(
+            'delete',
+            'Data destroy successfully delete'
+        );
     }
 }

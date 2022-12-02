@@ -30,32 +30,28 @@
 </div>
 
 <div class="table-responsive col-md-12">
-    <a href="/berita/create" class="btn btn-warning mb-2">Tambahkan Artikel</a>
+    <a href="/kuisioner/create" class="btn btn-warning mb-2">Tambahkan Kuisioner</a>
     <table class="table table-striped table-secondary table-sm table-bordered border-light mt-3">
         <thead>
             <tr class="text-center">
                 <th scope="col">No</th>
-                <th scope="col">Judul</th>
-                <th scope="col">Penulis</th>
-                <th scope="col">Isi Berita</th>
-                <th scope="col">Tanggal</th>
+                <th scope="col">Pertanyaan</th>
+                <th scope="col">Kategori</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($news as $newsly)
+            @foreach ($quiz as $quizs)
             <tr>
                 <td class="text-center">{{ $loop->iteration }}</td>
-                <td>{{ $newsly->title }}</td>
-                <td>{{ $newsly->author }}</td>
-                <td>{!! Str::limit($newsly->body, 20) !!}</td>
-                <td class="text-center">{{ $newsly->created_at->format('d/m/Y') }}</td>
+                <td>{{ $quizs->question }}</td>
+                <td class="text-center">{{ $quizs->category->name }}</td>
                 <td class="text-center">
-                    <a href="{{ route('berita.show', $newsly->id) }}}}" class="badge bg-primary"><i
+                    <a href="{{ route('kuisioner.show', $quizs->id) }}}}" class="badge bg-primary"><i
                             class="bi bi-eye"></i></a>
-                    <a href="{{ route('berita.edit', $newsly->id) }}" class="badge bg-success"><i
+                    <a href="{{ route('kuisioner.edit', $quizs->id) }}" class="badge bg-success"><i
                             class="bi bi-pencil-square"></i></></a>
-                    <form action="{{ route('berita.destroy', $newsly->id) }}}}" method="post" class="d-inline">
+                    <form action="{{ route('kuisioner.destroy', $quizs->id) }}}}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="badge bg-danger border-0"
@@ -69,7 +65,7 @@
     </table>
 </div>
 <div class="d-flex justify-content-center mt-3 mb-3">
-    {{-- {{ $news->links() }} --}}
+    {{-- {{ $informations->links() }} --}}
 </div>
 </div>
 @endsection
