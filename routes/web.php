@@ -43,7 +43,8 @@ Route::get('/berita/checkSlug', [
     'checkSlug',
 ])->middleware('auth');
 
+// news
 Route::resource('/berita', NewsController::class)->middleware('auth');
-Route::get('/kuisioner', [KuizionerController::class, 'index'])->middleware(
-    'auth'
-);
+
+// kuizioner
+Route::resource('/kuisioner', KuizionerController::class)->middleware('auth');
