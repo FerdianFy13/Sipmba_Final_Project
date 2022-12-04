@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Herlina Syafhita Maharani',
             'email' => 'herlina123@gmail.com',
             'password' => bcrypt('admin12345'),
+            'role_id' => '1',
         ]);
 
         $this->call(CategorySeeder::class);

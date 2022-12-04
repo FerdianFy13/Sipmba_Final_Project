@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    @yield('frontend')
 
     {{-- javascript --}}
     {{-- end javascript --}}

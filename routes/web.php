@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RedirectController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\KuizionerController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\OfficerdataController;
+use App\Http\Controllers\Frontend\RegistrationformController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,38 +21,52 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// @auth
+Route::group(['middleware' => 'guest'], function () {
+    // login Route
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
 });
 
-// @auth
-// login Route
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/redirect', [RedirectController::class, 'cek']);
+});
 
 // Register Route
-Route::get('/daftar', [RegisterController::class, 'index'])->middleware(
-    'guest'
-);
-Route::post('/daftar', [RegisterController::class, 'register']);
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/daftar', [RegisterController::class, 'index']);
+    Route::post('/daftar', [RegisterController::class, 'register']);
+});
 
 // @Backend
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(
-    'auth'
-);
-Route::get('/berita/checkSlug', [
-    NewsController::class,
-    'checkSlug',
-])->middleware('auth');
+Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
+    // dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
-// news
-Route::resource('/berita', NewsController::class)->middleware('auth');
+    // news
+    Route::get('/berita/checkSlug', [NewsController::class, 'checkSlug']);
 
-// kuizioner
-Route::resource('/kuisioner', KuizionerController::class)->middleware('auth');
+    // news
+    Route::resource('/berita', NewsController::class);
 
-// officer data
-Route::resource('/data-petugas', OfficerdataController::class)->middleware(
-    'auth'
-);
+    // kuizioner
+    Route::resource('/kuisioner', KuizionerController::class);
+
+    // officer data
+    Route::resource('/data-petugas', OfficerdataController::class);
+});
+
+// @frontend
+Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
+    // registration formulir
+    Route::get('/home/form-pendaftaran', [
+        RegistrationformController::class,
+        'index',
+    ]);
+
+    // home
+    Route::get('/', function () {
+        return view('welcome');
+    });
+});
