@@ -1,4 +1,4 @@
-<div class="main-sidebar navbar-nav sidebar sidebar-style-1">
+<div class="main-sidebar sidebar sidebar-style-1">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
             <a href="index.html"> <img alt="SIPMBA" src="{{ asset('auth/assets/img/logo.png') }}" class="header-logo" />
@@ -15,7 +15,8 @@
                         Darah</span></a>
             </li>
             <li class="dropdown {{ Request::is('data-petugas*') ? 'active' : '' }}">
-                <a href="/data-petugas" class="nav-link"><i class="fas fa-users"></i><span>Data Petugas</span></a>
+                <a href="/data-petugas" class="nav-link"><i class="fas fa-users"></i><span>Data
+                        Petugas</span></a>
             </li>
             <li class="dropdown {{ Request::is('data-pendonor*') ? 'active' : '' }}">
                 <a href="#" class="nav-link"><i class="fas fa-chart-bar"></i><span>Data Pendonor</span></a>
