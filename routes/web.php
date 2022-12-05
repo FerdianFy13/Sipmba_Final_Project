@@ -3,7 +3,9 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RedirectController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Backend\BlooddonorinputController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\KuizionerController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\OfficerdataController;
@@ -13,6 +15,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\RegistrationformController;
+use App\Models\BloodDonorInput;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,6 +63,12 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
 
     // officer data
     Route::resource('/data-petugas', OfficerdataController::class);
+
+    // event
+    Route::resource('/event', EventController::class);
+
+    // data donor
+    Route::resource('/data-pendonor', BlooddonorinputController::class);
 });
 
 // @frontend
