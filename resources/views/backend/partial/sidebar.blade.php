@@ -31,6 +31,9 @@
             <li class="dropdown {{ Request::is('berita*') ? 'active' : '' }}">
                 <a href="/berita" class="nav-link"><i class="fas fa-file-invoice"></i><span>Berita</span></a>
             </li>
+            <li class="dropdown {{ Request::is('event*') ? 'active' : '' }}">
+                <a href="/event" class="nav-link"><i class="fas fa-calendar-alt"></i><span>Event</span></a>
+            </li>
         </ul>
     </aside>
 </div>
