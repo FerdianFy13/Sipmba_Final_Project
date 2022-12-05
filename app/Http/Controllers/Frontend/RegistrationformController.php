@@ -10,6 +10,8 @@ class RegistrationformController extends Controller
     //
     public function index()
     {
-        return view('frontend.registration_form.index');
+        return view('frontend.registration_form.index', [
+            'title' => 'Formulir Pendaftaran Donor',
+        ]);
     }
 }

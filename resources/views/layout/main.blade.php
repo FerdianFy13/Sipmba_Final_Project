@@ -13,6 +13,7 @@
     <link href="{{ asset('dist/css/bootstrap.min.css') }}" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- General CSS Files -->
+
     <link rel="stylesheet" href="{{ asset('backend/assets/css/app.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/component.css') }}">
@@ -39,7 +40,7 @@
     {{-- end title --}}
 </head>
 
-<body>
+<body id="beranda">
     <div class="loader"></div>
     <div id="app">
         <div class="main-wrapper main-wrapper-1">

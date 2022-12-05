@@ -7,6 +7,11 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\KuizionerController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\OfficerdataController;
+use App\Http\Controllers\Frontend\ArticleController;
+use App\Http\Controllers\Frontend\BlooddonorController;
+use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\RegistrationformController;
 use Illuminate\Support\Facades\Route;
 
@@ -64,9 +69,33 @@ Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
         RegistrationformController::class,
         'index',
     ]);
+});
 
+Route::group(['middleware' => 'guest'], function () {
     // home
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', [HomeController::class, 'index']);
+
+    // article
+    Route::get('/artikel', [ArticleController::class, 'index']);
+
+    // blood donor
+    Route::get('/procedure-syarat-donor', [
+        BlooddonorController::class,
+        'procedure',
+    ]);
+    Route::get('/informasi-stok-darah', [
+        BlooddonorController::class,
+        'information',
+    ]);
+    Route::get('/jadwal-mobilisasi-donor', [
+        BlooddonorController::class,
+        'schedule',
+    ]);
+    Route::get('/alur-permintaan-darah', [BlooddonorController::class, 'flow']);
+
+    // profile
+    Route::get('/profil', [ProfileController::class, 'index']);
+
+    // contact
+    Route::get('/kontak', [ContactController::class, 'index']);
 });
