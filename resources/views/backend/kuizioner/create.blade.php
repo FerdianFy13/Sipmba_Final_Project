@@ -10,7 +10,7 @@
         <div class="mb-3">
             <label for="question" class="form-label">Pertanyaan</label>
             <input type="text" class="form-control @error('question') is-invalid @enderror" id="question"
-                name="question" value="{{ old('question') }}" required>
+                name="question" value="{{ old('question') }}" required placeholder="Masukkan nama pertanyaan">
             @error('question')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -20,6 +20,7 @@
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" name="category_id" required>
+                <option selected>Pilih kategori pertanyaan yang sesuai</option>
                 @foreach ($categories as $category)
                 @if (old('category_id') == $category->id)
                 <option value="{{ $category->id }}" selected>{{ $category->name }}</option>

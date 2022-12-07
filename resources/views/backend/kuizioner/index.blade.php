@@ -43,7 +43,7 @@
         <tbody>
             @foreach ($quiz as $quizs)
             <tr>
-                <td class="text-center">{{ $loop->iteration }}</td>
+                <td class="text-center">{{ ($quiz->currentPage() - 1) * ($quiz->perPage()) + $loop->iteration }}</td>
                 <td>{{ $quizs->question }}</td>
                 <td class="text-center">{{ $quizs->category->name }}</td>
                 <td class="text-center">
@@ -51,7 +51,7 @@
                             class="bi bi-eye"></i></a> --}}
                     <a href="{{ route('kuisioner.edit', $quizs->id) }}" class="badge bg-success"><i
                             class="bi bi-pencil-square"></i></></a>
-                    <form action="{{ route('kuisioner.destroy', $quizs->id) }}}}" method="post" class="d-inline">
+                    <form action="{{ route('kuisioner.destroy', $quizs->id) }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="badge bg-danger border-0"
@@ -64,8 +64,8 @@
         </tbody>
     </table>
 </div>
-<div class="d-flex justify-content-center mt-3 mb-3">
-    {{-- {{ $informations->links() }} --}}
+<div class="d-flex justify-content-center mt-3 mb-3 text-danger">
+    {{ $quiz->links() }}
 </div>
 </div>
 @endsection

@@ -10,7 +10,7 @@
         <div class="mb-3">
             <label for="title" class="form-label">Judul</label>
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-                value="{{ old('title') }}" required>
+                value="{{ old('title') }}" required placeholder="Masukkan judul artikel">
             @error('title')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -30,7 +30,7 @@
         <div class="mb-3">
             <label for="author" class="form-label">Penulis</label>
             <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author"
-                value="{{ old('author') }}" required>
+                value="{{ old('author') }}" required placeholder="Masukkan nama penulis artikel">
             @error('author')
             <div class="invalid-feedback">
                 {{ $message }}

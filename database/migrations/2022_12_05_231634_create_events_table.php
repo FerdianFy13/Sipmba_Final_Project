@@ -16,8 +16,10 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->string('place', 55);
+            $table->string('alamat', 55);
             $table->date('date');
             $table->string('time');
+            $table->string('call', 45);
             $table->timestamps();
         });
     }

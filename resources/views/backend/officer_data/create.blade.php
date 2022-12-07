@@ -10,7 +10,7 @@
         <div class="mb-3">
             <label for="name" class="form-label">Nama Lengkap</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                value="{{ old('name') }}" required>
+                value="{{ old('name') }}" required placeholder="Masukkan nama lengkap anda">
             @error('name')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -30,7 +30,7 @@
         <div class="mb-3">
             <label for="" class="form-label">NIK</label>
             <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik"
-                value="{{ old('nik') }}" required>
+                value="{{ old('nik') }}" required placeholder="Masukkan Nomor Induk Kependudukan anda">
             @error('nik')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -40,7 +40,7 @@
         <div class="mb-3">
             <label for="pmi_id" class="form-label">ID PMI</label>
             <input type="text" class="form-control @error('pmi_id') is-invalid @enderror" id="pmi_id" name="pmi_id"
-                value="{{ old('pmi_id') }}" required>
+                value="{{ old('pmi_id') }}" required placeholder="Masukkan ID PMI anda">
             @error('pmi_id')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -50,7 +50,7 @@
         <div class="mb-3">
             <label for="born" class="form-label">Tempat Lahir</label>
             <input type="text" class="form-control @error('born') is-invalid @enderror" id="born" name="born"
-                value="{{ old('born') }}" required>
+                value="{{ old('born') }}" required placeholder="Masukkan tempat lahir anda">
             @error('born')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -60,7 +60,7 @@
         <div class="mb-3">
             <label for="date" class="form-label">Tanggal Lahir</label>
             <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date"
-                value="{{ old('date') }}" required>
+                value="{{ old('date') }}" required placeholder="Masukkan tanggal lahir anda">
             @error('date')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -88,7 +88,7 @@
         <div class="mb-3">
             <label for="alamat" class="form-label">Alamat</label>
             <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat"
-                value="{{ old('alamat') }}" required>
+                value="{{ old('alamat') }}" required placeholder="Masukkan alamat anda">
             @error('alamat')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -98,7 +98,7 @@
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
-                value="{{ old('email') }}" required>
+                value="{{ old('email') }}" required placeholder="Masukkan alamat email anda">
             @error('email')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -108,7 +108,7 @@
         <div class="mb-3">
             <label for="telepon" class="form-label">Telepon</label>
             <input type="text" class="form-control @error('telepon') is-invalid @enderror" id="telepon" name="telepon"
-                value="{{ old('telepon') }}" required>
+                value="{{ old('telepon') }}" required placeholder="Masukkan nomor telepon anda">
             @error('telepon')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -118,7 +118,7 @@
         <div class="mb-3">
             <label for="job" class="form-label">Jabatan</label>
             <input type="text" class="form-control @error('') is-invalid @enderror" id="job" name="job"
-                value="{{ old('job') }}" required>
+                value="{{ old('job') }}" required placeholder="Masukkan jabatan anda">
             @error('job')
             <div class="invalid-feedback">
                 {{ $message }}
