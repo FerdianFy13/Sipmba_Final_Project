@@ -17,11 +17,13 @@ class KuizionerController extends Controller
     public function index()
     {
         //
-        $kuizioner = Kuizioner::with('category')->get();
+        // $kuizioner = Kuizioner::with('category')->paginate(10);
 
         return view('backend.kuizioner.index', [
             'title' => 'Kuisioner',
-            'quiz' => $kuizioner,
+            'quiz' => Kuizioner::with('category')
+                // ->where('category_id', 1)
+                ->paginate(10),
         ]);
     }
 

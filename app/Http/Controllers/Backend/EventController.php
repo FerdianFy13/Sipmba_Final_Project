@@ -48,8 +48,10 @@ class EventController extends Controller
         $validation = $request->validate([
             'name' => 'required|min:2',
             'place' => ['required', 'min:2'],
+            'alamat' => ['required', 'min:2'],
             'time' => ['required'],
             'date' => ['required'],
+            'call' => ['required'],
         ]);
 
         // Create insert to table post a view in my portfolio and portofolio a front-end layout
@@ -107,8 +109,10 @@ class EventController extends Controller
         $validation = [
             'name' => 'required|min:2',
             'place' => ['required', 'min:2'],
+            'alamat' => ['required', 'min:2'],
             'time' => ['required'],
             'date' => ['required'],
+            'call' => ['required'],
         ];
 
         $validationData = $request->validate($validation);

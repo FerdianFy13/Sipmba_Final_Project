@@ -37,6 +37,8 @@
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Tempat</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Narahubung</th>
                 <th scope="col">Tanggal</th>
                 <th scope="col">Waktu</th>
                 <th scope="col">Action</th>
@@ -48,6 +50,8 @@
                 <td class="text-center">{{ $loop->iteration }}</td>
                 <td>{{ $events->name }}</td>
                 <td>{{ $events->place }}</td>
+                <td>{{ $events->alamat }}</td>
+                <td>{{ $events->call }}</td>
                 {{-- <td>{!! Str::limit($events->body, 20) !!}</td> --}}
                 <td class="text-center">{{ $events->date }}</td>
                 <td class="text-center">{{ $events->time }}</td>

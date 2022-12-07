@@ -18,6 +18,10 @@ class EventFactory extends Factory
     {
         return [
             //
+            'name' => $this->faker->numerify('pmi-######'),
+            'place' => $this->faker->word(),
+            'date' => $this->faker->date('Y_m_d'),
+            'time' => $this->faker->time(),
         ];
     }
 }

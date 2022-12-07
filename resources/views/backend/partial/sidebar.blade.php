@@ -19,7 +19,7 @@
                         Petugas</span></a>
             </li>
             <li class="dropdown {{ Request::is('data-pendonor*') ? 'active' : '' }}">
-                <a href="#" class="nav-link"><i class="fas fa-chart-bar"></i><span>Data Pendonor</span></a>
+                <a href="/data-pendonor" class="nav-link"><i class="fas fa-chart-bar"></i><span>Data Pendonor</span></a>
             </li>
             <li class="menu-header">Input</li>
             <li class="dropdown {{ Request::is('stok-darah*') ? 'active' : '' }}">

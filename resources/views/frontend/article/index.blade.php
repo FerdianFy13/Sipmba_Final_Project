@@ -8,9 +8,9 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-7 text-center">
                         <h2 class="fs-3 fw-bold">Artikel</h2>
-                        <p>Halaman Artikel merupakan halaman yang berisi mengenai kegiatan,edukasi dan juga berita
+                        <p>Halaman Artikel merupakan halaman yang berisi mengenai kegiatan, edukasi, dan juga berita
                             terbaru dari
-                            PMI Kabupaten Bantul</p>
+                            PMI Kabupaten Bantul.</p>
                     </div>
                 </div>
             </div>

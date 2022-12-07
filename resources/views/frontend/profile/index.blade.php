@@ -10,7 +10,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-7 text-center">
                         <h2 class="fs-3 fw-bold">Profil</h2>
-                        <p>Baca profil selengkapnya untuk mengetahui info sejarah ,visi, misi dan struktur organisasi
+                        <p>Baca profil selengkapnya untuk mengetahui info sejarah, visi, misi, dan struktur organisasi
                             dari PMI
                             Kabupaten Bantul.</p>
                     </div>
@@ -32,7 +32,7 @@
         <!-- Sejarah dan Logo-->
         <div class="col-md-12">
             <img src="assets/img/logo-pmi.png" class="mx-auto d-block" alt="" width="18%">
-            <h2 class="text-center fw-bolder" style="margin-top: -4%;">Kapubaten Bantul</h2>
+            <h2 class="text-center fw-bolder" style="margin-top: -4%;">PMI Kabupaten Bantul</h2>
             <div class="container p-4">
                 <p style="text-align: justify;">Berdirinya Palang Merah di Indonesia sebenarnya sudah dimulai sejak masa
                     sebelum

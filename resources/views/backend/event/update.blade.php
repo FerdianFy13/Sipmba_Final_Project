@@ -29,6 +29,16 @@
             @enderror
         </div>
         <div class="mb-3">
+            <label for="alamat" class="form-label">Alamat Event</label>
+            <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat"
+                value="{{ old('alamat', $events->alamat) }}" required placeholder="Masukkan alamat event kegiatan">
+            @error('alamat')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label for="date" class="form-label">Tanggal Event</label>
             <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date"
                 value="{{ old('date', $events->date) }}" required>
@@ -43,6 +53,16 @@
             <input type="text" class="form-control @error('time') is-invalid @enderror" id="time" name="time"
                 value="{{ old('time', $events->time) }}" required>
             @error('time')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="call" class="form-label">Narahubung Event</label>
+            <input type="text" class="form-control @error('call') is-invalid @enderror" id="call" name="call"
+                value="{{ old('call', $events->call) }}" required placeholder="Nomer Handphone">
+            @error('call')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>

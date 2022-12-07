@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class BloodDonorInput extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+    protected $hidden = [''];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function definition()
+    {
+        return [
+            'token' => $this->faker->numerify('pmi-###'),
+        ];
+    }
 }

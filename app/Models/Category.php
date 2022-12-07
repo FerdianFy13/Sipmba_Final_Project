@@ -20,4 +20,9 @@ class Category extends Model
     {
         return $this->hasMany(OfficerData::class);
     }
+
+    public function BloodDonorInput()
+    {
+        return $this->hasMany(BloodDonorInput::class);
+    }
 }
