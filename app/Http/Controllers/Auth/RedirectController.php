@@ -13,7 +13,7 @@ class RedirectController extends Controller
         if (auth()->user()->role_id === 1) {
             return redirect('/dashboard');
         } else {
-            return redirect('/home/form-pendaftaran');
+            return redirect('/form-pendaftaran');
         }
     }
 }

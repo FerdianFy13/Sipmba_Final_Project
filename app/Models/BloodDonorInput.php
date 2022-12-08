@@ -17,6 +17,11 @@ class BloodDonorInput extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function option()
+    {
+        return $this->belongsTo(Option::class);
+    }
+
     public function definition()
     {
         return [

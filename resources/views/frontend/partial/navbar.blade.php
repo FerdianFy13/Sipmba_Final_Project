@@ -31,7 +31,7 @@
                 <li><a href="/kontak" class="{{ Request::is('kontak*') ? 'active' : '' }}">Kontak</a></li>
                 @auth
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ Request::is('home/form-pendaftaran*') ? 'active' : '' }}"
+                    <a class="nav-link dropdown-toggle {{ Request::is('form-pendaftaran*', 'kuiz*') ? 'active' : '' }}"
                         href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Welcome {{ auth()->user()->name }}
                     </a>

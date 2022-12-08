@@ -30,7 +30,7 @@ class LoginController extends Controller
             if (auth()->user()->role_id === 1) {
                 return redirect()->intended('/dashboard');
             } else {
-                return redirect()->intended('/home/form-pendaftaran');
+                return redirect()->intended('/form-pendaftaran');
             }
         }
 

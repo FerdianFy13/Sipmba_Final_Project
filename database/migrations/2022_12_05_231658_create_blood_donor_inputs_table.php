@@ -15,6 +15,7 @@ return new class extends Migration {
         Schema::create('blood_donor_inputs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
+            // $table->foreignId('option_id');
             $table->string('nik', 25);
             $table->string('name', 45);
             $table->string('born', 45);
@@ -23,6 +24,10 @@ return new class extends Migration {
             $table->string('job');
             $table->string('call', 24);
             $table->string('place', 55);
+            $table->string('option1', 7);
+            $table->string('option2', 7);
+            $table->string('option3', 7);
+            $table->date('date');
             $table->rememberToken();
             // $table->string('token', 16);
             $table->timestamps();

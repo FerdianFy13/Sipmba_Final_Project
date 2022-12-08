@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CategorySeeder::class);
         $this->call(KuizionerSeeder::class);
+        $this->call(OptionSeeder::class);
 
         // Event::factory(5)->create();
     }

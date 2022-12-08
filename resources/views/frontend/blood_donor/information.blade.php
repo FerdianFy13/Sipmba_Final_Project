@@ -117,7 +117,7 @@
                             </div>
 
                             <div class="card-footer text-center p-4">
-                                <a href="form-donor-identitas.html" class="mx-2">
+                                <a href="/form-pendaftaran" class="mx-2">
                                     <button type="button" class="btn btn-outline-light"">Donor</button>
                   </a>
                   <a href=" alur-minta-darah.html">
