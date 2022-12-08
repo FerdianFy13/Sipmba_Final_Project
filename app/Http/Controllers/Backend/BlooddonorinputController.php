@@ -67,6 +67,10 @@ class BlooddonorinputController extends Controller
             'job' => ['required'],
             'call' => ['required'],
             'place' => ['required'],
+            'option1' => ['required'],
+            'option2' => ['required'],
+            'option3' => ['required'],
+            'date' => ['required'],
             // 'token' => $faker->randomNumber(),
         ]);
 
@@ -135,6 +139,10 @@ class BlooddonorinputController extends Controller
             'job' => ['required'],
             'call' => ['required'],
             'place' => ['required'],
+            'option1' => ['required'],
+            'option2' => ['required'],
+            'option3' => ['required'],
+            'date' => ['required'],
             // 'token' => $faker->randomNumber(),
         ]);
 

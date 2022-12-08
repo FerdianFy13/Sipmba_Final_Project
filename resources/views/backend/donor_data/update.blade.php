@@ -9,6 +9,9 @@
         class="mb-5">
         @csrf
         @method('patch')
+        <div class="">
+            <label for="staticEmail2" class="label fw-bolder ">Formulir Identitas Diri</label>
+        </div>
         <div class="mb-3">
             <label for="nik" class="form-label">NIK</label>
             <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik"
@@ -102,6 +105,50 @@
             <input type="text" class="form-control @error('place') is-invalid @enderror" id="place" name="place"
                 value="{{ old('place', $blood->place) }}" required placeholder="Masukkan alamat anda">
             @error('place')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="">
+            <label for="staticEmail2" class="label fw-bolder ">Formulir Kuisioner</label>
+        </div>
+        <div class="mb-3">
+            <label for="option1" class="form-label">Apakah anda pernah donor darah sebelumnya?</label>
+            <input type="text" class="form-control @error('option1') is-invalid @enderror" id="option1" name="option1"
+                value="{{ old('option1', $blood->option1) }}" required placeholder="Masukkan jawaban Iya atau Tidak">
+            @error('option1')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="option2" class="form-label">Apakah anda bersedia untuk donor darah?</label>
+            <input type="text" class="form-control @error('option2') is-invalid @enderror" id="option2" name="option2"
+                value="{{ old('option2', $blood->option2) }}" required placeholder="Masukkan jawaban Iya atau Tidak">
+            @error('option2')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="option3" class="form-label">Apakah anda bersedia donor saat dibutuhkan untuk keperluan
+                tertentu?</label>
+            <input type="text" class="form-control @error('option3') is-invalid @enderror" id="option3" name="option3"
+                value="{{ old('option3', $blood->option3) }}" required placeholder="Masukkan jawaban Iya atau Tidak">
+            @error('option3')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Donor terakhir tanggal?</label>
+            <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date"
+                value="{{ old('date', $blood->date) }}" required placeholder="">
+            @error('date')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>

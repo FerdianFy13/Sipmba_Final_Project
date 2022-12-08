@@ -13,7 +13,7 @@
                     eum quaerat.
                 </p>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                    <a href="page-pendaftaran/form-donor-identitas.html" class="btn-get-started">Donor Sekarang</a>
+                    <a href="/form-pendaftaran" class="btn-get-started">Donor Sekarang</a>
                     <a href="page-donordarah/info-stok.html" class=" btn-watch-video d-flex align-items-center">
                         <i class="bi-info-circle"></i><span>Informasi Stok Darah</span></a>
                 </div>

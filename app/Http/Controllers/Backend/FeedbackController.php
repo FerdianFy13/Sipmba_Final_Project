@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\BloodDonorInput;
-use App\Models\Category;
 use Illuminate\Http\Request;
 
-class RegistrationformController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +15,6 @@ class RegistrationformController extends Controller
     public function index()
     {
         //
-        return view('frontend.form.create', [
-            'title' => 'Formulir Pendaftaran Donor',
-        ]);
     }
 
     /**
@@ -30,10 +25,6 @@ class RegistrationformController extends Controller
     public function create()
     {
         //
-        return view('frontend.form.create', [
-            'title' => 'Create Data Pendonor',
-            'categories' => Category::all(),
-        ]);
     }
 
     /**
@@ -45,28 +36,6 @@ class RegistrationformController extends Controller
     public function store(Request $request)
     {
         //
-        $validation = $request->validate([
-            'category_id' => 'required',
-            'nik' => ['required'],
-            'name' => ['required'],
-            'born' => ['required'],
-            'day' => ['required'],
-            'age' => ['required'],
-            'job' => ['required'],
-            'call' => ['required'],
-            'place' => ['required'],
-            // 'token' => $faker->randomNumber(),
-        ]);
-
-        // Create insert to table post a view in my portfolio and portofolio a front-end layout
-        BloodDonorInput::create($validation, [
-            // 'token' => $this->faker->numerify('pmi-###'),
-        ]);
-
-        return redirect('/form-pendaftaran')->with(
-            'success',
-            'Formulir pendaftaran berhasil ditamabahkan'
-        );
     }
 
     /**
