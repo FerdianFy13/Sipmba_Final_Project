@@ -34,6 +34,9 @@
             <li class="dropdown {{ Request::is('event*') ? 'active' : '' }}">
                 <a href="/event" class="nav-link"><i class="fas fa-calendar-alt"></i><span>Event</span></a>
             </li>
+            <li class="dropdown {{ Request::is('feedback*') ? 'active' : '' }}">
+                <a href="/feedback" class="nav-link"><i class="fas fa-comments"></i><span>Feedback</span></a>
+            </li>
         </ul>
     </aside>
 </div>

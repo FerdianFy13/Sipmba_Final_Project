@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Backend\BlooddonorinputController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EventController;
+use App\Http\Controllers\Backend\FeedbackController;
 use App\Http\Controllers\Backend\KuizionerController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\OfficerdataController;
@@ -71,6 +72,9 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
 
     // data donor
     Route::resource('/data-pendonor', BlooddonorinputController::class);
+
+    // feedback
+    Route::resource('/feedback', FeedbackController::class);
 });
 
 // @frontend
