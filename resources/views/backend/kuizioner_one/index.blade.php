@@ -47,7 +47,7 @@
                 <td class="text-center">{{ ($data->currentPage() - 1) * ($data->perPage()) + $loop->iteration }}
                 </td>
                 {{-- <td>Kuisioner 2</td> --}}
-                <td class="text-center">Kuisioner 2</td>
+                <td class="text-center">Kuisioner 1</td>
                 {{-- <td class="text-center">{{ $quizs->category->name }}</td> --}}
                 <td class="text-center">{{ $quiz->user->name }}</td>
                 <td class="text-center">
