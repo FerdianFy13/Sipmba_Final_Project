@@ -6,9 +6,12 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Backend\BlooddonorinputController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EventController;
+use App\Http\Controllers\Backend\FeedbackController;
 use App\Http\Controllers\Backend\KuizionerController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\OfficerdataController;
+use App\Http\Controllers\Backend\QuizoneController;
+use App\Http\Controllers\Backend\QuiztwoController;
 use App\Http\Controllers\Frontend\ArticleController;
 use App\Http\Controllers\Frontend\BlooddonorController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -71,6 +74,15 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
 
     // data donor
     Route::resource('/data-pendonor', BlooddonorinputController::class);
+
+    // kuizioner one
+    Route::resource('/one-kuisioner', QuizoneController::class);
+
+    // kuizioner two
+    Route::resource('/two-kuisioner', QuiztwoController::class);
+
+    // feedback
+    Route::resource('/feedback', FeedbackController::class);
 });
 
 // @frontend
@@ -113,4 +125,5 @@ Route::group(['middleware' => 'guest'], function () {
 
     // contact
     Route::get('/kontak', [ContactController::class, 'index']);
+    Route::post('/kontak', [ContactController::class, 'create']);
 });

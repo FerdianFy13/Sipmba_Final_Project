@@ -12,11 +12,13 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('questiontwos', function (Blueprint $table) {
             $table->id();
-            $table->string('option1');
-            // $table->string('option2');
-            // $table->string('option3');
+            $table->string('answer1');
+            $table->string('answer2');
+            $table->date('answer3');
+            $table->string('answer4');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('questiontwos');
     }
 };

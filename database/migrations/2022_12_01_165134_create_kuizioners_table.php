@@ -15,6 +15,7 @@ return new class extends Migration {
         Schema::create('kuizioners', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
+            // $table->foreignId('user_id');
             $table->string('question');
             $table->timestamps();
         });

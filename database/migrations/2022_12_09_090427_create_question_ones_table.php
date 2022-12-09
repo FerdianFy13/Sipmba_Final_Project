@@ -12,11 +12,9 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('question_ones', function (Blueprint $table) {
             $table->id();
-            $table->string('option1');
-            // $table->string('option2');
-            // $table->string('option3');
+            $table->string('quiz');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('question_ones');
     }
 };

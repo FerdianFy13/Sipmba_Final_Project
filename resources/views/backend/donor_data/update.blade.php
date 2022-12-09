@@ -110,7 +110,7 @@
             </div>
             @enderror
         </div>
-        <div class="">
+        {{-- <div class="">
             <label for="staticEmail2" class="label fw-bolder ">Formulir Kuisioner</label>
         </div>
         <div class="mb-3">
@@ -153,7 +153,7 @@
                 {{ $message }}
             </div>
             @enderror
-        </div>
+        </div> --}}
         {{-- <a href="/data-pendonor" class="btn btn-danger"><i class="bi bi-arrow-left"></i> Back</a> --}}
         <button type="submit" class="btn btn-primary">Update</button>
 

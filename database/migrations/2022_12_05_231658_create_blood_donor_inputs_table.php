@@ -24,10 +24,10 @@ return new class extends Migration {
             $table->string('job');
             $table->string('call', 24);
             $table->string('place', 55);
-            $table->string('option1', 7);
-            $table->string('option2', 7);
-            $table->string('option3', 7);
-            $table->date('date');
+            // $table->string('option1', 7);
+            // $table->string('option2', 7);
+            // $table->string('option3', 7);
+            // $table->date('date');
             $table->rememberToken();
             // $table->string('token', 16);
             $table->timestamps();

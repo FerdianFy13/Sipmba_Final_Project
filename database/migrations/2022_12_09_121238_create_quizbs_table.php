@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -12,11 +13,8 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('quizbs', function (Blueprint $table) {
             $table->id();
-            $table->string('option1');
-            // $table->string('option2');
-            // $table->string('option3');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('quizbs');
     }
 };

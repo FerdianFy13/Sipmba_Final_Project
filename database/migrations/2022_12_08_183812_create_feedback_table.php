@@ -12,11 +12,12 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->string('option1');
-            // $table->string('option2');
-            // $table->string('option3');
+            $table->string('name', 55);
+            $table->string('email', 55);
+            $table->string('subject', 65);
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('feedback');
     }
 };

@@ -17,6 +17,16 @@
             </div>
             @enderror
         </div>
+        {{-- <div class="mb-3">
+            <label for="user_id" class="form-label">User</label>
+            <input type="hidden" class="form-control @error('user_id') is-invalid @enderror" id="user_id" name="user_id"
+                value="{{ auth()->user()->id }}" placeholder="Masukkan nama pertanyaan">
+            @error('user_id')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div> --}}
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" name="category_id" required>

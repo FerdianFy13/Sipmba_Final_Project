@@ -30,30 +30,34 @@
 </div>
 
 <div class="table-responsive col-md-12">
-    <a href="/kuisioner/create" class="btn btn-warning mb-2">Tambahkan Kuisioner</a>
+    <a href="/feedback/create" class="btn btn-warning mb-2">Tambahkan Feedback</a>
     <table class="table table-striped table-secondary table-sm table-bordered border-light mt-3">
         <thead>
             <tr class="text-center">
                 <th scope="col">No</th>
-                <th scope="col">Pertanyaan</th>
-                <th scope="col">Kategori</th>
-                {{-- <th scope="col">User</th> --}}
+                <th scope="col">Nama</th>
+                <th scope="col">Email</th>
+                <th scope="col">Subjek</th>
+                <th scope="col">Tanggal Kirim</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($quiz as $quizs)
+            @foreach ($feedbacks as $feedback)
             <tr>
-                <td class="text-center">{{ ($quiz->currentPage() - 1) * ($quiz->perPage()) + $loop->iteration }}</td>
-                <td>{{ $quizs->question }}</td>
-                <td class="text-center">{{ $quizs->category->name }}</td>
-                {{-- <td class="text-center">{{ $quizs->user->name }}</td> --}}
+                <td class="text-center">{{ $loop->iteration }}</td>
+                <td>{{ $feedback->name }}</td>
+                <td>{{ $feedback->email }}</td>
+                <td>{{ $feedback->subject }}</td>
+                <td>{{ $feedback->created_at->format('d-m-Y') }}</td>
+                {{-- <td class="text-center">{{ $feedback->date }}</td>
+                <td class="text-center">{{ $feedback->time }}</td> --}}
                 <td class="text-center">
-                    {{-- <a href="{{ route('kuisioner.show', $quizs->id) }}}}" class="badge bg-primary"><i
-                            class="bi bi-eye"></i></a> --}}
-                    <a href="{{ route('kuisioner.edit', $quizs->id) }}" class="badge bg-success"><i
+                    <a href="{{ route('feedback.show', $feedback->id) }}}}" class="badge bg-primary"><i
+                            class="bi bi-eye"></i></a>
+                    <a href="{{ route('feedback.edit', $feedback->id) }}" class="badge bg-success"><i
                             class="bi bi-pencil-square"></i></></a>
-                    <form action="{{ route('kuisioner.destroy', $quizs->id) }}" method="post" class="d-inline">
+                    <form action="{{ route('feedback.destroy', $feedback->id) }}}}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="badge bg-danger border-0"
@@ -66,8 +70,8 @@
         </tbody>
     </table>
 </div>
-<div class="d-flex justify-content-center mt-3 mb-3 text-danger">
-    {{ $quiz->links() }}
+<div class="d-flex justify-content-center mt-3 mb-3">
+    {{-- {{ $news->links() }} --}}
 </div>
 </div>
 @endsection
