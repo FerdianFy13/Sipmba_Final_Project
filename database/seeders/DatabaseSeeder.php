@@ -20,11 +20,19 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'nik' => '1234567812345678',
+            'nik' => '3525015201880002',
             'name' => 'Herlina Syafhita Maharani',
             'email' => 'herlina123@gmail.com',
             'password' => bcrypt('admin12345'),
             'role_id' => '1',
+        ]);
+
+        \App\Models\User::factory()->create([
+            'nik' => '3525016501830002',
+            'name' => 'Ferdian Firmansyah',
+            'email' => 'ferdianfy13@gmail.com',
+            'password' => bcrypt('123459876'),
+            'role_id' => '2',
         ]);
 
         $this->call(CategorySeeder::class);

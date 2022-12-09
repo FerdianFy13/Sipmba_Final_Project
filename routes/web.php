@@ -17,6 +17,8 @@ use App\Http\Controllers\Frontend\BlooddonorController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FormregisController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\KuisoneController;
+use App\Http\Controllers\Frontend\KuiztwoController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\QuizioneroneController;
 use App\Http\Controllers\Frontend\RegistrationformController;
@@ -92,8 +94,18 @@ Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
     //     RegistrationformController::class,
     //     'index',
     // ]);
+    // form registration
     Route::get('/form-pendaftaran', [FormregisController::class, 'index']);
     Route::post('/form-pendaftaran', [FormregisController::class, 'form']);
+
+    // kuizioner one
+    Route::get('/kuisioner1', [KuisoneController::class, 'index']);
+    Route::post('/kuisioner1', [KuisoneController::class, 'create']);
+
+    // kuizioner two
+    Route::get('/kuisioner2', [KuiztwoController::class, 'index']);
+    Route::post('/kuisioner2', [KuiztwoController::class, 'create']);
+
     // Route::get('/kuiz', [QuizioneroneController::class, 'index']);
     // Route::resource('form-pendaftaran', RegistrationformController::class);
 });

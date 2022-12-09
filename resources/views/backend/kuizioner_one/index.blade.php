@@ -30,7 +30,7 @@
 </div>
 
 <div class="table-responsive col-md-12">
-    <a href="/one-kuisioner/create" class="btn btn-warning mb-2">Tambahkan Kuisioner</a>
+    <a href="/one-kuisioner/create" class="btn btn-warning mb-2">Tambahkan Kuisioner 1</a>
     <table class="table table-striped table-secondary table-sm table-bordered border-light mt-3">
         <thead>
             <tr class="text-center">
