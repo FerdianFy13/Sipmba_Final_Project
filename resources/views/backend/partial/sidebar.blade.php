@@ -18,8 +18,15 @@
                 <a href="/data-petugas" class="nav-link"><i class="fas fa-users"></i><span>Data
                         Petugas</span></a>
             </li>
-            <li class="dropdown {{ Request::is('data-pendonor*') ? 'active' : '' }}">
-                <a href="/data-pendonor" class="nav-link"><i class="fas fa-chart-bar"></i><span>Data Pendonor</span></a>
+            <li
+                class="dropdown {{ Request::is('data-pendonor*', 'one-kuisioner*', 'two-kuisioner*') ? 'active' : 'text-light'}}">
+                <a href="/data-pendonor" class="menu-toggle nav-link has-dropdown"><i
+                        class="fas fa-chart-bar"></i><span>Data Pendonor</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link text-dark fw-bold" href="/data-pendonor">Formulir Identitas Diri</a></li>
+                    <li><a class="nav-link text-dark fw-bold" href="/one-kuisioner">Formulir Kuisioner 1</a></li>
+                    <li><a class="nav-link text-dark fw-bold" href="/two-kuisioner">Formulir Kuisioner 2</a></li>
+                </ul>
             </li>
             <li class="menu-header">Input</li>
             <li class="dropdown {{ Request::is('stok-darah*') ? 'active' : '' }}">

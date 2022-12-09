@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Event;
+use App\Models\QuestionOne;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -30,6 +31,7 @@ class DatabaseSeeder extends Seeder
         $this->call(KuizionerSeeder::class);
         $this->call(OptionSeeder::class);
 
+        QuestionOne::factory(5)->create([]);
         // Event::factory(5)->create();
     }
 }

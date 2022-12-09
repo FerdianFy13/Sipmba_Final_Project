@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Kuizioner;
+use App\Models\Option;
+use App\Models\Questiontwo;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class KuizionerController extends Controller
+class QuiztwoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +18,9 @@ class KuizionerController extends Controller
     public function index()
     {
         //
-        // $kuizioner = Kuizioner::with('category')->paginate(10);
-
-        return view('backend.kuizioner.index', [
-            'title' => 'Kuisioner',
-            'quiz' => Kuizioner::with('category', 'user')
-                // ->where('category_id', 1)
-                ->paginate(10),
+        return view('backend.kuizioner_two.index', [
+            'title' => 'Data Kuisioner Dua Pendonor',
+            'data' => Questiontwo::with('user')->paginate(10),
         ]);
     }
 
@@ -36,9 +32,10 @@ class KuizionerController extends Controller
     public function create()
     {
         //
-        return view('backend.kuizioner.create', [
-            'title' => 'Create Kuisioner',
-            'categories' => Category::all(),
+        return view('backend.kuizioner_two.create', [
+            'title' => 'Create Data Kuisioner Dua Pendonor',
+            'quiz' => Questiontwo::all(),
+            'option' => Option::all(),
             'user' => User::all(),
         ]);
     }
@@ -53,15 +50,18 @@ class KuizionerController extends Controller
     {
         //
         $validation = $request->validate([
-            'category_id' => 'required',
+            // 'question_one_id' => 'required',
             'user_id' => 'required',
-            'question' => ['required', 'min:2'],
+            'answer1' => ['required'],
+            'answer2' => ['required'],
+            'answer3' => ['required'],
+            'answer4' => ['required'],
         ]);
 
         // Create insert to table post a view in my portfolio and portofolio a front-end layout
-        Kuizioner::create($validation);
+        Questiontwo::create($validation);
 
-        return redirect('/kuisioner')->with(
+        return redirect('/two-kuisioner')->with(
             'success',
             'New Post created successfully add'
         );
@@ -76,6 +76,14 @@ class KuizionerController extends Controller
     public function show($id)
     {
         //
+        $quiz = Questiontwo::findOrFail($id);
+
+        return view('backend.kuizioner_two.show', [
+            'title' => 'Detail Data Kuisioner Dua Pendonor',
+            'quiz' => $quiz,
+            'option' => Option::all(),
+            'user' => User::all(),
+        ]);
     }
 
     /**
@@ -87,12 +95,13 @@ class KuizionerController extends Controller
     public function edit($id)
     {
         //
-        $quiz = Kuizioner::findOrFail($id);
+        $quiz = Questiontwo::findOrFail($id);
 
-        return view('backend.kuizioner.update', [
-            'title' => 'Update Kuisioner',
-            'categories' => Category::all(),
+        return view('backend.kuizioner_two.update', [
+            'title' => 'Update Data Kuisioner Dua Pendonor',
             'quiz' => $quiz,
+            'option' => Option::all(),
+            'user' => User::all(),
         ]);
     }
 
@@ -107,16 +116,19 @@ class KuizionerController extends Controller
     {
         //
         $validation = $request->validate([
-            'category_id' => 'required',
-            'question' => ['required', 'min:2'],
+            'user_id' => 'required',
+            'answer1' => ['required'],
+            'answer2' => ['required'],
+            'answer3' => ['required'],
+            'answer4' => ['required'],
         ]);
 
         // Create insert to table post a view in my portfolio and portofolio a front-end layout
-        Kuizioner::whereId($id)->update($validation);
+        Questiontwo::whereId($id)->update($validation);
 
-        return redirect('/kuisioner')->with(
+        return redirect('/two-kuisioner')->with(
             'update',
-            'Questionnaire successfully update'
+            'Questionnaire Two successfully update'
         );
     }
 
@@ -129,9 +141,9 @@ class KuizionerController extends Controller
     public function destroy($id)
     {
         //
-        $quizs = Kuizioner::findOrFail($id);
-        $quizs->delete();
-        return redirect('kuisioner')->with(
+        $quiz = Questiontwo::findOrFail($id);
+        $quiz->delete();
+        return redirect('two-kuisioner')->with(
             'delete',
             'Data destroy successfully delete'
         );

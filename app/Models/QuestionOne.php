@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Option extends Model
+class QuestionOne extends Model
 {
     use HasFactory;
 
-    public function BloodDonorInput()
-    {
-        return $this->hasMany(BloodDonorInput::class);
-    }
-
-    public function Question()
+    public function question()
     {
         return $this->hasMany(Question::class);
     }

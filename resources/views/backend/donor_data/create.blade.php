@@ -108,7 +108,7 @@
             </div>
             @enderror
         </div>
-        <div class="">
+        {{-- <div class="">
             <label for="staticEmail2" class="label fw-bolder ">Formulir Kuisioner</label>
         </div>
         <div class="mb-3">
@@ -151,7 +151,7 @@
                 {{ $message }}
             </div>
             @enderror
-        </div>
+        </div> --}}
         <button type="submit" class="btn btn-primary">Tambahkan</button>
     </form>
 </div>

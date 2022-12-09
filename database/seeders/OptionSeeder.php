@@ -18,13 +18,13 @@ class OptionSeeder extends Seeder
         //
         Option::factory()->create([
             'option1' => 'Iya',
-            'option2' => 'Iya',
-            'option3' => 'Iya',
+            // 'option2' => 'Iya',
+            // 'option3' => 'Iya',
         ]);
         Option::factory()->create([
             'option1' => 'Tidak',
-            'option2' => 'Tidak',
-            'option3' => 'Tidak',
+            // 'option2' => 'Tidak',
+            // 'option3' => 'Tidak',
         ]);
     }
 }
