@@ -18,6 +18,24 @@ class NewsFactory extends Factory
     {
         return [
             //
+            'title' => $this->faker->sentence(mt_rand(2, 8)),
+            'author' => fake()->name(),
+            'slug' => fake()->slug(1),
+            'image' => fake()->image(
+                null,
+                360,
+                360,
+                'blood donor',
+                true,
+                true,
+                'cats',
+                true,
+                'jpg'
+            ),
+            'body' =>
+                '<p>' .
+                implode('<p></p>', $this->faker->paragraphs(mt_rand(5, 10))) .
+                '</p>',
         ];
     }
 }

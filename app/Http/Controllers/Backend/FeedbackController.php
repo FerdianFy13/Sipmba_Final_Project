@@ -18,7 +18,7 @@ class FeedbackController extends Controller
         //
         return view('backend.feedback.index', [
             'title' => 'Feedback',
-            'feedbacks' => Feedback::all(),
+            'feedbacks' => Feedback::with('user')->paginate(10),
         ]);
     }
 

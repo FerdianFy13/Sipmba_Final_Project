@@ -14,12 +14,14 @@ use App\Http\Controllers\Backend\QuizoneController;
 use App\Http\Controllers\Backend\QuiztwoController;
 use App\Http\Controllers\Frontend\ArticleController;
 use App\Http\Controllers\Frontend\BlooddonorController;
+use App\Http\Controllers\Frontend\ConfirmationController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FormregisController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\KuisoneController;
 use App\Http\Controllers\Frontend\KuiztwoController;
 use App\Http\Controllers\Frontend\ProfileController;
+use App\Http\Controllers\Frontend\QueueController;
 use App\Http\Controllers\Frontend\QuizioneroneController;
 use App\Http\Controllers\Frontend\RegistrationformController;
 use App\Models\BloodDonorInput;
@@ -105,6 +107,14 @@ Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
     // kuizioner two
     Route::get('/kuisioner2', [KuiztwoController::class, 'index']);
     Route::post('/kuisioner2', [KuiztwoController::class, 'create']);
+
+    // confirmation
+    Route::get('/konfirmasi', [ConfirmationController::class, 'index']);
+    Route::post('/konfirmasi', [ConfirmationController::class, 'create']);
+
+    // queue
+    Route::get('/antrian', [QueueController::class, 'index']);
+    Route::post('/antrian', [QueueController::class, 'create']);
 
     // Route::get('/kuiz', [QuizioneroneController::class, 'index']);
     // Route::resource('form-pendaftaran', RegistrationformController::class);

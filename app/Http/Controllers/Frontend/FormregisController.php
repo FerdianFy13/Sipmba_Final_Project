@@ -16,6 +16,7 @@ class FormregisController extends Controller
         return view('frontend.form.create', [
             'title' => 'Formulir Identitas Diri',
             'categories' => Category::all(),
+            'blood' => BloodDonorInput::all(),
         ]);
     }
 

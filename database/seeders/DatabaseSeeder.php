@@ -5,7 +5,10 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Event;
+use App\Models\Feedback;
+use App\Models\News;
 use App\Models\QuestionOne;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -39,7 +42,10 @@ class DatabaseSeeder extends Seeder
         $this->call(KuizionerSeeder::class);
         $this->call(OptionSeeder::class);
 
-        QuestionOne::factory(5)->create([]);
-        // Event::factory(5)->create();
+        // QuestionOne::factory(5)->create();
+        // Feedback::factory(15)->create();
+        News::factory(15)->create();
+        User::factory(15)->create();
+        // Event::factory(15)->create();
     }
 }

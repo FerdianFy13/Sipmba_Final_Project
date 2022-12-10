@@ -20,6 +20,10 @@ return new class extends Migration {
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->unsignedBigInteger('role_id')->default(2);
+            // $table->bigInteger('test', true, true);
+            // $table->increments('ids')->first();
+            // $table->autoIncrementingStartingValues('queue');
+            // $table->autoIncrement('queue')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

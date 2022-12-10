@@ -61,7 +61,7 @@ class OfficerdataController extends Controller
             'email' => ['required', 'email:dns'],
             'telepon' => ['required', 'min:5'],
             'job' => ['required'],
-            'image' => 'image|required|file|max:10120|mimes:png,jpg,jpeg',
+            'image' => 'image|file|max:10120|mimes:png,jpg,jpeg',
         ]);
 
         if ($request->file('image')) {

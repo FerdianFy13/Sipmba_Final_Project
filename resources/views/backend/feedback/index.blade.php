@@ -45,7 +45,8 @@
         <tbody>
             @foreach ($feedbacks as $feedback)
             <tr>
-                <td class="text-center">{{ $loop->iteration }}</td>
+                <td class="text-center">{{ ($feedbacks->currentPage() - 1) * ($feedbacks->perPage()) + $loop->iteration
+                    }}</td>
                 <td>{{ $feedback->name }}</td>
                 <td>{{ $feedback->email }}</td>
                 <td>{{ $feedback->subject }}</td>
@@ -71,7 +72,7 @@
     </table>
 </div>
 <div class="d-flex justify-content-center mt-3 mb-3">
-    {{-- {{ $news->links() }} --}}
+    {{ $feedbacks->links() }}
 </div>
 </div>
 @endsection

@@ -57,7 +57,8 @@
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-box">
                         <div class="icon"><i class="bi bi-calendar-week"></i></div>
-                        <h4 class="title"><a href="" class="stretched-link">Event Donor Darah</a></h4>
+                        <h4 class="title"><a href="/jadwal-mobilisasi-donor" class="stretched-link">Event Donor
+                                Darah</a></h4>
                     </div>
                 </div>
                 <!--End Jadwal -->
@@ -65,7 +66,7 @@
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-box">
                         <div class="icon"><i class="bi bi-box-seam"></i></div>
-                        <h4 class="title"><a href="page-donordarah/info-stok.html" class="stretched-link">Stok
+                        <h4 class="title"><a href="/informasi-stok-darah" class="stretched-link">Stok
                                 Darah</a></h4>
                     </div>
                 </div>
@@ -74,7 +75,8 @@
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon-box">
                         <div class="icon"><i class="bi-book"></i></div>
-                        <h4 class="title"><a href="" class="stretched-link">Prosedur & Syarat Donor Darah</a></h4>
+                        <h4 class="title"><a href="/procedure-syarat-donor" class="stretched-link">Prosedur & Syarat
+                                Donor Darah</a></h4>
                     </div>
                 </div>
                 <!--End Prosedur & Alur Donor -->
@@ -82,7 +84,8 @@
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
                     <div class="icon-box">
                         <div class="icon"><i class="bi bi-bounding-box-circles"></i></div>
-                        <h4 class="title"><a href="" class="stretched-link">Alur Permintaan Darah</a></h4>
+                        <h4 class="title"><a href="/alur-permintaan-darah" class="stretched-link">Alur Permintaan
+                                Darah</a></h4>
                     </div>
                 </div>
                 <!--End Alur Permintaan Darah-->
@@ -104,21 +107,20 @@
             <h2>Artikel Terkini</h2>
         </div>
 
+        @foreach ($news as $data)
         <div class="row gy-12">
             <div class="card" style="max-width: 100%;">
                 <div class="row gy-0">
                     <div class="col-md-4 p-4">
                         <img src="{{ asset('frontend/assets/img/portfolio/branding-1.jpg') }}" class="img-fluid rounded"
-                            alt="...">
+                            alt="image">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title pt-4">Judul Artikel</h5>
-                            <p class="card-text"><small class="text-muted">Moch Surya - Senin, 21 November 2022
+                            <h5 class="card-title pt-4">{{ $data->title }}</h5>
+                            <p class="card-text"><small class="text-muted">{{ $data->author }} - {{ $data->created_at }}
                                 </small></p>
-                            <p class="card-text">This is a wider card with supporting text below as a natural
-                                lead-in to
-                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text">{!! Str::limit($data->body, 130) !!}</p>
                             <p class="button-details pt-2">
                                 <a href="baca-full-artikel.html">Baca Selengkapnya</a>
                             </p>
@@ -127,8 +129,9 @@
                 </div>
             </div>
         </div>
+        @endforeach
 
-        <div class="row gy-12 pt-4">
+        {{-- <div class="row gy-12 pt-4">
             <div class="card" style="max-width: 100%;">
                 <div class="row gy-0">
                     <div class="col-md-4 p-4">
@@ -174,7 +177,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 <!-- End Artikel Terkini Section -->

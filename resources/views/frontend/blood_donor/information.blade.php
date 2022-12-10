@@ -120,7 +120,7 @@
                                 <a href="/form-pendaftaran" class="mx-2">
                                     <button type="button" class="btn btn-outline-light"">Donor</button>
                   </a>
-                  <a href=" alur-minta-darah.html">
+                  <a href=" /alur-permintaan-darah">
                                         <button type="button" class="btn btn-outline-light">Minta Darah</button>
                                 </a>
                             </div>
