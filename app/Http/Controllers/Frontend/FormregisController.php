@@ -14,8 +14,9 @@ class FormregisController extends Controller
     {
         //
         return view('frontend.form.create', [
-            'title' => 'Create Data Pendonor',
+            'title' => 'Formulir Identitas Diri',
             'categories' => Category::all(),
+            'blood' => BloodDonorInput::all(),
         ]);
     }
 
@@ -31,10 +32,10 @@ class FormregisController extends Controller
             'job' => ['required'],
             'call' => ['required'],
             'place' => ['required'],
-            'option1' => ['required'],
-            'option2' => ['required'],
-            'option3' => ['required'],
-            'date' => ['required'],
+            // 'option1' => ['required'],
+            // 'option2' => ['required'],
+            // 'option3' => ['required'],
+            // 'date' => ['required'],
             // 'token' => $faker->randomNumber(),
         ]);
 
@@ -43,9 +44,9 @@ class FormregisController extends Controller
             // 'token' => $this->faker->numerify('pmi-###'),
         ]);
 
-        return redirect('/form-pendaftaran')->with(
+        return redirect('/kuisioner1')->with(
             'success',
-            'Formulir pendaftaran berhasil ditambahkan'
+            'Formulir identitas diri berhasil ditambahkan'
         );
     }
 }

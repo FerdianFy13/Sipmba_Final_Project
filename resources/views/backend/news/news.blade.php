@@ -46,7 +46,7 @@
             @foreach ($news as $newsly)
             <tr>
                 <td class="text-center">{{ $loop->iteration }}</td>
-                <td>{{ $newsly->title }}</td>
+                <td>{{ Str::limit($newsly->title, 20) }}</td>
                 <td>{{ $newsly->author }}</td>
                 <td>{!! Str::limit($newsly->body, 20) !!}</td>
                 <td class="text-center">{{ $newsly->created_at->format('d/m/Y') }}</td>

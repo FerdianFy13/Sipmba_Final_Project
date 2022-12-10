@@ -52,7 +52,7 @@ class NewsController extends Controller
             'title' => ['required', 'max:255', 'min:4'],
             'slug' => ['required', 'max:255', 'min:2'],
             'author' => ['required', 'max:255', 'min:4'],
-            'image' => 'image|required|file|max:10120|mimes:png,jpg,jpeg',
+            'image' => 'image|file|max:10120|mimes:png,jpg,jpeg',
             'body' => ['required'],
         ]);
 

@@ -72,7 +72,8 @@
                 sedang
                 hamil? Kehamilan berapa?</label>
             <input type="text" class="form-control @error('answer6') is-invalid @enderror" id="answer6" name="answer6"
-                value="{{ old('answer6') }}" required placeholder="Masukkan jawaban Iya atau Tidak">
+                value="{{ old('answer6') }}" required
+                placeholder="Masukkan jawaban Iya atau Tidak, jika Iya masukkan juga dalam bentuk angka">
             @error('answer6')
             <div class="invalid-feedback">
                 {{ $message }}

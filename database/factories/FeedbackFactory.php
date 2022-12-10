@@ -18,6 +18,12 @@ class FeedbackFactory extends Factory
     {
         return [
             //
+            'name' => fake()->name(),
+            'email' => fake()
+                ->unique()
+                ->freeEmail(),
+            'subject' => fake()->word(),
+            'message' => fake()->sentence(15),
         ];
     }
 }
