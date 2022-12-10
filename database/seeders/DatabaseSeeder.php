@@ -43,9 +43,9 @@ class DatabaseSeeder extends Seeder
         $this->call(OptionSeeder::class);
 
         // QuestionOne::factory(5)->create();
-        // Feedback::factory(15)->create();
+        Feedback::factory(15)->create();
         News::factory(15)->create();
         User::factory(15)->create();
-        // Event::factory(15)->create();
+        Event::factory(15)->create();
     }
 }

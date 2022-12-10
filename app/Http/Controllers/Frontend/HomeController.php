@@ -18,4 +18,14 @@ class HomeController extends Controller
                 ->paginate(3),
         ]);
     }
+
+    public function show(News $news)
+    {
+        // $data = News::findOrFail($id);
+
+        return view('frontend.home.detail', [
+            'title' => 'Detail Artikel Terkini',
+            'data' => $news,
+        ]);
+    }
 }

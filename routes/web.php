@@ -123,9 +123,14 @@ Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
 Route::group(['middleware' => 'guest'], function () {
     // home
     Route::get('/', [HomeController::class, 'index']);
+    Route::get('/home/detail/{news:slug}', [HomeController::class, 'show']);
 
     // article
     Route::get('/artikel', [ArticleController::class, 'index']);
+    Route::get('/artikel/detail/{news:slug}', [
+        ArticleController::class,
+        'show',
+    ]);
 
     // blood donor
     Route::get('/procedure-syarat-donor', [

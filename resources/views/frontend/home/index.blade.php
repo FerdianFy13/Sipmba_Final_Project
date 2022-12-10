@@ -111,18 +111,30 @@
         <div class="row gy-12">
             <div class="card" style="max-width: 100%;">
                 <div class="row gy-0">
+                    @if ($data->image)
                     <div class="col-md-4 p-4">
-                        <img src="{{ asset('frontend/assets/img/portfolio/branding-1.jpg') }}" class="img-fluid rounded"
-                            alt="image">
+                        <img src="{{ asset('storage/' . $data->image) }}" class="img-fluid rounded" alt="image"
+                            style="width:1024; height: 768;" width="1024" height="768">
                     </div>
+                    @else
+                    <div class="col-md-4 p-4">
+                        <img src="https://source.unsplash.com/1024x768?{{ $data->title }}" class="img-fluid rounded"
+                            alt="image" style="width:1024; height: 768;" width="1024" height="768">
+                    </div>
+                    @endif
+                    {{-- <div class="col-md-4 p-4">
+                        <img src="{{ asset('frontend/assets/img/portfolio/branding-1.jpg') }}" class="img-fluid rounded"
+                            alt="image" style="width:1024; height: 768;">
+                    </div> --}}
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title pt-4">{{ $data->title }}</h5>
-                            <p class="card-text"><small class="text-muted">{{ $data->author }} - {{ $data->created_at }}
+                            <p class="card-text"><small class="text-muted">{{ $data->author }} - {{
+                                    $data->created_at->format('l, d F Y') }}
                                 </small></p>
                             <p class="card-text">{!! Str::limit($data->body, 130) !!}</p>
                             <p class="button-details pt-2">
-                                <a href="baca-full-artikel.html">Baca Selengkapnya</a>
+                                <a href="/home/detail/{{ $data->slug }}">Baca Selengkapnya</a>
                             </p>
                         </div>
                     </div>
