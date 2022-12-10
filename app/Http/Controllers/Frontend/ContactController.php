@@ -19,7 +19,7 @@ class ContactController extends Controller
     public function create(Request $request)
     {
         $validation = $request->validate([
-            'name' => 'required|min:2',
+            'name' => 'required',
             'email' => ['required'],
             'subject' => ['required'],
             'message' => ['required'],
@@ -30,7 +30,7 @@ class ContactController extends Controller
 
         return redirect('/kontak')->with(
             'success',
-            'New Post created successfully add'
+            'Feedback berhasil ditambahkan'
         );
     }
 }
