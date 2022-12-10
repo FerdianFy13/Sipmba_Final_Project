@@ -19,6 +19,10 @@ return new class extends Migration {
             $table->string('slug')->unique();
             $table->string('image', 255)->nullable();
             $table->text('body');
+            $table
+                ->string('category')
+                ->default('Blood Donor')
+                ->nullable();
             $table->timestamps();
         });
     }

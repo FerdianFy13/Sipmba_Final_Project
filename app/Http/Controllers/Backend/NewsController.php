@@ -21,7 +21,9 @@ class NewsController extends Controller
 
         return view('backend.news.news', [
             'title' => 'Berita',
-            'news' => News::all(),
+            'news' => News::with('user')
+                ->latest()
+                ->paginate(10),
         ]);
     }
 

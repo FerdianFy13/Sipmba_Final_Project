@@ -56,8 +56,8 @@
                 <td class="text-center">
                     <a href="{{ route('feedback.show', $feedback->id) }}}}" class="badge bg-primary"><i
                             class="bi bi-eye"></i></a>
-                    <a href="{{ route('feedback.edit', $feedback->id) }}" class="badge bg-success"><i
-                            class="bi bi-pencil-square"></i></></a>
+                    {{-- <a href="{{ route('feedback.edit', $feedback->id) }}" class="badge bg-success"><i
+                            class="bi bi-pencil-square"></i></></a> --}}
                     <form action="{{ route('feedback.destroy', $feedback->id) }}}}" method="post" class="d-inline">
                         @method('delete')
                         @csrf

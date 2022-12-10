@@ -6,7 +6,7 @@
         </a>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="/" class="{{ Request::is('/*') ? 'active' : '' }}">Beranda</a></li>
+                <li><a href="/" class="{{ Request::is('/*', 'home*') ? 'active' : '' }}">Beranda</a></li>
                 <li><a href="/artikel" class="{{ Request::is('artikel*') ? 'active' : '' }}">Artikel</a></li>
                 <li class="dropdown">
                     <a href="/procedure-syarat-donor"

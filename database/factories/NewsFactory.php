@@ -20,7 +20,9 @@ class NewsFactory extends Factory
             //
             'title' => $this->faker->sentence(mt_rand(2, 8)),
             'author' => fake()->name(),
-            'slug' => fake()->slug(1),
+            'slug' => fake()
+                ->unique()
+                ->slug(1),
             'image' => fake()->image(
                 null,
                 360,

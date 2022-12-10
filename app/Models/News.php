@@ -14,10 +14,10 @@ class News extends Model
     protected $guarded = ['id'];
     // protected $table = 'news';
 
-    // public function getRouteKeyName()
-    // {
-    //     return 'slug';
-    // }
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function sluggable(): array
     {

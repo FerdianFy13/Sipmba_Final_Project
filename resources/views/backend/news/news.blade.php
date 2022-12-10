@@ -45,7 +45,7 @@
         <tbody>
             @foreach ($news as $newsly)
             <tr>
-                <td class="text-center">{{ $loop->iteration }}</td>
+                <td class="text-center">{{ ($news->currentPage() - 1) * ($news->perPage()) + $loop->iteration }}</td>
                 <td>{{ Str::limit($newsly->title, 20) }}</td>
                 <td>{{ $newsly->author }}</td>
                 <td>{!! Str::limit($newsly->body, 20) !!}</td>
@@ -69,7 +69,7 @@
     </table>
 </div>
 <div class="d-flex justify-content-center mt-3 mb-3">
-    {{-- {{ $news->links() }} --}}
+    {{ $news->links() }}
 </div>
 </div>
 @endsection
