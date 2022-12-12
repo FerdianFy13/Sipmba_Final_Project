@@ -21,7 +21,9 @@ class QuizoneController extends Controller
         //
         return view('backend.kuizioner_one.index', [
             'title' => 'Data Kuisioner Satu Pendonor',
-            'data' => Question::with('user')->paginate(10),
+            'data' => Question::with('user')
+                ->latest()
+                ->paginate(10),
         ]);
     }
 

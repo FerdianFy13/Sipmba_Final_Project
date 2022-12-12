@@ -30,37 +30,34 @@
 </div>
 
 <div class="table-responsive col-md-12">
-    <a href="/event/create" class="btn btn-warning mb-2">Tambahkan Event</a>
+    <a href="/data-permintaan-darah/create" class="btn btn-warning mb-2">Tambahkan Data Permintaan Darah</a>
     <table class="table table-striped table-secondary table-sm table-bordered border-light mt-3">
         <thead>
             <tr class="text-center">
                 <th scope="col">No</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Tempat</th>
-                <th scope="col">Alamat</th>
-                <th scope="col">Narahubung</th>
                 <th scope="col">Tanggal</th>
-                <th scope="col">Waktu</th>
+                <th scope="col">Rumah Sakit</th>
+                <th scope="col">Nama Petugas</th>
+                <th scope="col">Jumlah</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($event as $events)
+            @foreach ($blood_request as $bloods)
             <tr>
-                <td class="text-center">{{ ($event->currentPage() - 1) * ($event->perPage()) + $loop->iteration }}</td>
-                <td>{{ $events->name }}</td>
-                <td>{{ $events->place }}</td>
-                <td>{{ Str::limit($events->alamat, 25) }}</td>
-                <td>{{ $events->call }}</td>
-                {{-- <td>{!! Str::limit($events->body, 20) !!}</td> --}}
-                <td class="text-center">{{ $events->date }}</td>
-                <td class="text-center">{{ $events->time }}</td>
+                <td class="text-center">{{ ($blood_request->currentPage() - 1) * ($blood_request->perPage()) +
+                    $loop->iteration }}</td>
+                <td class="text-center">{{ $bloods->date }}</td>
+                <td>{{ $bloods->hospital }}</td>
+                <td>{{ $bloods->name_officer }}</td>
+                <td class="text-center">{{ $bloods->sum }}</td>
                 <td class="text-center">
-                    <a href="{{ route('event.show', $events->id) }}}}" class="badge bg-primary"><i
+                    <a href="{{ route('data-permintaan-darah.show', $bloods->id) }}}}" class="badge bg-primary"><i
                             class="bi bi-eye"></i></a>
-                    <a href="{{ route('event.edit', $events->id) }}" class="badge bg-success"><i
+                    <a href="{{ route('data-permintaan-darah.edit', $bloods->id) }}" class="badge bg-success"><i
                             class="bi bi-pencil-square"></i></></a>
-                    <form action="{{ route('event.destroy', $events->id) }}}}" method="post" class="d-inline">
+                    <form action="{{ route('data-permintaan-darah.destroy', $bloods->id) }}}}" method="post"
+                        class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="badge bg-danger border-0"
@@ -74,7 +71,7 @@
     </table>
 </div>
 <div class="d-flex justify-content-center mt-3 mb-3">
-    {{ $event->links() }}
+    {{ $blood_request->links() }}
 </div>
 </div>
 @endsection

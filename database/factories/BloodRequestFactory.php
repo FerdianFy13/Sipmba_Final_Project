@@ -18,6 +18,7 @@ class BloodRequestFactory extends Factory
     {
         return [
             //
+            'hospital' => fake()->word(),
         ];
     }
 }

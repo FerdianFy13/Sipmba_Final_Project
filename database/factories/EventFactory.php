@@ -21,7 +21,8 @@ class EventFactory extends Factory
             'name' => $this->faker->name(),
             'place' => $this->faker->words(2, true),
             'alamat' => $this->faker->words(4, true),
-            'date' => $this->faker->date('Y_m_d'),
+            'date' => $this->faker->dateTimeBetween('+0 days', '+2 months'),
+            // 'date' => $this->faker->date('Y_m_d'),
             'time' => $this->faker->time(),
             'call' => $this->faker->numberBetween(82330602071, 85330602071),
         ];

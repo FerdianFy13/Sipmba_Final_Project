@@ -11,7 +11,7 @@
                 <a href="/dashboard" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
             </li>
             <li class="{{ Request::is('data-permintaan-darah*') ? 'active' : '' }}">
-                <a href="index.html" class="nav-link"><i class="fas fa-user"></i><span>Data Permintaan
+                <a href="/data-permintaan-darah" class="nav-link"><i class="fas fa-user"></i><span>Data Permintaan
                         Darah</span></a>
             </li>
             <li class="dropdown {{ Request::is('data-petugas*') ? 'active' : '' }}">

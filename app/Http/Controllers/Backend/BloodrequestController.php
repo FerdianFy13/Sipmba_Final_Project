@@ -16,6 +16,12 @@ class BloodrequestController extends Controller
     public function index()
     {
         //
+        return view('backend.blood_request.index', [
+            'title' => 'Data Permintaan Darah',
+            'blood_request' => BloodRequest::with('user')
+                ->orderBy('date', 'desc')
+                ->paginate(10),
+        ]);
     }
 
     /**
@@ -26,6 +32,9 @@ class BloodrequestController extends Controller
     public function create()
     {
         //
+        return view('backend.blood_request.create', [
+            'title' => 'Create Data Permintaan Darah',
+        ]);
     }
 
     /**
@@ -37,6 +46,31 @@ class BloodrequestController extends Controller
     public function store(Request $request)
     {
         //
+        $validation = $request->validate([
+            'hospital' => ['required'],
+            'name_request' => ['required'],
+            'name_officer' => ['required'],
+            'call_officer' => ['required'],
+            'date' => ['required'],
+            'time' => ['required'],
+            'sum' => ['required'],
+            'blooda1' => ['required'],
+            'blooda2' => ['required'],
+            'bloodb1' => ['required'],
+            'bloodb2' => ['required'],
+            'bloodc1' => ['required'],
+            'bloodc2' => ['required'],
+            'bloodd1' => ['required'],
+            'bloodd2' => ['required'],
+        ]);
+
+        // Create insert to table post a view in my portfolio and portofolio a front-end layout
+        BloodRequest::create($validation);
+
+        return redirect('/data-permintaan-darah')->with(
+            'success',
+            'New Post created successfully add'
+        );
     }
 
     /**
@@ -45,9 +79,15 @@ class BloodrequestController extends Controller
      * @param  \App\Models\BloodRequest  $bloodRequest
      * @return \Illuminate\Http\Response
      */
-    public function show(BloodRequest $bloodRequest)
+    public function show($id)
     {
         //
+        $data = BloodRequest::findOrFail($id);
+
+        return view('backend.blood_request.show', [
+            'title' => 'Detail Data Permintaan Darah',
+            'bloods' => $data,
+        ]);
     }
 
     /**
@@ -56,9 +96,15 @@ class BloodrequestController extends Controller
      * @param  \App\Models\BloodRequest  $bloodRequest
      * @return \Illuminate\Http\Response
      */
-    public function edit(BloodRequest $bloodRequest)
+    public function edit($id)
     {
         //
+        $data = BloodRequest::findOrFail($id);
+
+        return view('backend.blood_request.update', [
+            'title' => 'Update Data Permintaan Darah',
+            'bloods' => $data,
+        ]);
     }
 
     /**
@@ -68,9 +114,35 @@ class BloodrequestController extends Controller
      * @param  \App\Models\BloodRequest  $bloodRequest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BloodRequest $bloodRequest)
+    public function update(Request $request, $id)
     {
         //
+        $validation = [
+            'hospital' => ['required'],
+            'name_request' => ['required'],
+            'name_officer' => ['required'],
+            'call_officer' => ['required'],
+            'date' => ['required'],
+            'time' => ['required'],
+            'sum' => ['required'],
+            'blooda1' => ['required'],
+            'blooda2' => ['required'],
+            'bloodb1' => ['required'],
+            'bloodb2' => ['required'],
+            'bloodc1' => ['required'],
+            'bloodc2' => ['required'],
+            'bloodd1' => ['required'],
+            'bloodd2' => ['required'],
+        ];
+
+        $validationData = $request->validate($validation);
+
+        BloodRequest::whereId($id)->update($validationData);
+
+        return redirect('/data-permintaan-darah')->with(
+            'update',
+            'Blood Donor Request successfully update'
+        );
     }
 
     /**
@@ -79,8 +151,14 @@ class BloodrequestController extends Controller
      * @param  \App\Models\BloodRequest  $bloodRequest
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BloodRequest $bloodRequest)
+    public function destroy($id)
     {
         //
+        $bloods = BloodRequest::findOrFail($id);
+        $bloods->delete();
+        return redirect('data-permintaan-darah')->with(
+            'delete',
+            'Data destroy successfully delete'
+        );
     }
 }
