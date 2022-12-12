@@ -30,7 +30,7 @@
             </li>
             <li class="menu-header">Input</li>
             <li class="dropdown {{ Request::is('stok-darah*') ? 'active' : '' }}">
-                <a href="#" class="nav-link"><i class="fas fa-chart-line"></i><span>Stok Darah</span></a>
+                <a href="/stok-darah" class="nav-link"><i class="fas fa-chart-line"></i><span>Stok Darah</span></a>
             </li>
             <li class="dropdown {{ Request::is('kuisioner*') ? 'active' : '' }}">
                 <a href="/kuisioner" class="nav-link"><i class="fas fa-layer-group"></i><span>Kuisioner</span></a>

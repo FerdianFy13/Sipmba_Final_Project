@@ -38,7 +38,7 @@ class KuiztwoController extends Controller
         // Create insert to table post a view in my portfolio and portofolio a front-end layout
         Questiontwo::create($validation);
 
-        return redirect('/kuisioner2')->with(
+        return redirect('/konfirmasi')->with(
             'success',
             'Formulir kuisioner tahap 2 berhasil ditambahkan'
         );

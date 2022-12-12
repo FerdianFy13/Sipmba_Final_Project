@@ -54,6 +54,7 @@ class EventController extends Controller
             'time' => ['required'],
             'date' => ['required'],
             'call' => ['required'],
+            'qouta' => ['required'],
         ]);
 
         // Create insert to table post a view in my portfolio and portofolio a front-end layout
@@ -115,6 +116,7 @@ class EventController extends Controller
             'time' => ['required'],
             'date' => ['required'],
             'call' => ['required'],
+            'qouta' => ['required'],
         ];
 
         $validationData = $request->validate($validation);

@@ -31,7 +31,7 @@
     <section id="profil" class="profil ">
         <!-- Sejarah dan Logo-->
         <div class="col-md-12">
-            <img src="assets/img/logo-pmi.png" class="mx-auto d-block" alt="" width="18%">
+            <img src="{{ asset('frontend/assets/img/logo-pmi.png') }}" class="mx-auto d-block" alt="" width="18%">
             <h2 class="text-center fw-bolder" style="margin-top: -4%;">PMI Kabupaten Bantul</h2>
             <div class="container p-4">
                 <p style="text-align: justify;">Berdirinya Palang Merah di Indonesia sebenarnya sudah dimulai sejak masa

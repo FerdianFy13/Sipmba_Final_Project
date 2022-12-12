@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class BlooddonorController extends Controller
@@ -26,6 +27,9 @@ class BlooddonorController extends Controller
     {
         return view('frontend.blood_donor.schedule', [
             'title' => 'Jadwal Mobilisasi Donor',
+            'event' => Event::with('user')
+                ->orderBy('date', 'desc')
+                ->paginate(10),
         ]);
     }
 

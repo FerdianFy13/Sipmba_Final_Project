@@ -12,15 +12,9 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('blood_components', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 45);
-            $table->string('place', 55);
-            $table->string('alamat', 55);
-            $table->date('date');
-            $table->string('time');
-            $table->string('call', 45);
-            $table->string('qouta', 45);
+            $table->string('component_name');
             $table->timestamps();
         });
     }
@@ -32,6 +26,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('blood_components');
     }
 };
