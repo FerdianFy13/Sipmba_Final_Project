@@ -68,6 +68,16 @@
             </div>
             @enderror
         </div>
+        <div class="mb-3">
+            <label for="qouta" class="form-label">Kouta Donor</label>
+            <input type="text" class="form-control @error('qouta') is-invalid @enderror" id="qouta" name="qouta"
+                value="{{ old('qouta', $events->qouta) }}" required placeholder="Masukkan jumlah kouta donor" readonly>
+            @error('qouta')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
         <a href="/event" class="btn btn-danger"><i class="bi bi-arrow-left"></i> Back</a>
         {{-- <button type="submit" class="btn btn-primary">Tambahkan</button> --}}
         {{--

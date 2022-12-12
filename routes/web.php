@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RedirectController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Backend\BlooddonorinputController;
 use App\Http\Controllers\Backend\BloodrequestController;
+use App\Http\Controllers\Backend\BloodstockController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\FeedbackController;
@@ -82,6 +83,9 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
 
     // data donor
     Route::resource('/data-pendonor', BlooddonorinputController::class);
+
+    // blood stock donor
+    Route::resource('/stok-darah', BloodstockController::class);
 
     // kuizioner one
     Route::resource('/one-kuisioner', QuizoneController::class);

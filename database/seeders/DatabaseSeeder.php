@@ -41,6 +41,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(KuizionerSeeder::class);
         $this->call(OptionSeeder::class);
+        $this->call(BloodgroupSeeder::class);
+        $this->call(BloodcomponentSeeder::class);
 
         // QuestionOne::factory(5)->create();
         Feedback::factory(15)->create();

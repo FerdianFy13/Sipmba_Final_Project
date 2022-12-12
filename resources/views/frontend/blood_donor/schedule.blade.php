@@ -26,75 +26,51 @@
         </nav>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= jadwal-darah Section ======= -->
-    <section>
+    <section id="alur-donor" class="alur-donor">
         <div class="container aos-init aos-animate ">
-            <div class="row">
-                <div class="col-sm-6 p-3">
-                    <div class="card p-4" style="border: none;">
-                        <div class="card-body text-center">
-                            <div id="color-calendar"></div>
-                        </div>
-                    </div>
+            <div class="d-flex justify-content-center">
+                <div class="col-lg-7 text-center">
+                    <h2 class="fs-3 fw-bold">Jadwal Mobilisasi Donor</h2>
                 </div>
-                <div class="col-sm-6 p-3">
-                    <div class="card p-4" style="border: none;">
-                        <div class="card-body">
-                            <div class="events-display m-5">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+            <div class="table-responsive col-md-12 mt-2">
+                <table class="table table-striped table-light table-sm table-bordered border-secondary mt-3">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Event</th>
+                            <th scope="col">Tempat</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">Narahubung</th>
+                            <th scope="col">Kouta Donor</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Waktu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($event as $events)
+                        <tr>
+                            <td class="text-center">{{ ($event->currentPage() - 1) * ($event->perPage()) +
+                                $loop->iteration }}</td>
+                            <td>{{ $events->name }}</td>
+                            <td>{{ Str::limit($events->place, 20) }}</td>
+                            <td>{{ Str::limit($events->alamat, 25) }}</td>
+                            <td>{{ $events->call }}</td>
+                            <td class="text-center">{{ $events->qouta }}</td>
+                            <td class="text-center">{{ $events->date }}</td>
+                            <td class="text-center">{{ $events->time }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-center mt-3 mb-3">
+                {{ $event->links() }}
+            </div>
+        </div>
     </section>
+    <!-- ======= jadwal-darah Section ======= -->
+
     <!-- jadwal-stok-darah section -->
-</main><!-- End #main -->
-<script>
-    new Calendar({
-            id: '#color-calendar',
-            calendarSize: 'large',
-            eventsData: [{
-                start: '2021-04-15T06:00:00',
-                end: '2021-04-15T20:30:00',
-                name: 'Event 1',
-                url: 'https://www.cssscript.com',
-            }, {
-                start: '2021-04-16T06:00:00',
-                end: '2021-04-16T20:30:00',
-                name: 'Event 2',
-                url: 'https://www.cssscript.com',
-            }, {
-                start: '2022-12-16T06:00:00',
-                end: '2022-12-17T20:30:00',
-                name: 'Event 3',
-                url: 'https://www.cssscript.com',
-            }, ],
-            theme: 'glass',
-            primaryColor: '#B93737',
-            headerBackgroundColor: '#B93737',
-            // weekdayType: 'long-lower',
-            dateChanged: (currentDate, events) => {
-                const events_display = document.querySelector('.events-display');
-                let events_html = '';
-                console.log(currentDate, events);
-                events.forEach(event => {
-                    events_html += `
-          <div class="event">
-            <div class="event-left">
-              <div class="event-title fw-bold">Tempat : ${event.name}</div>
-              <div class="event-title fw-bold"> Waktu : ${event.start}</div 
-              <a href="${event.url}" target="_blank" class="event-url">${event.url}</a>
-            </div>
-          </div>
-        `
-                });
-                if (events_html) {
-                    events_display.innerHTML = events_html;
-                } else {
-                    events_display.innerHTML = '<div class="no-events-text">No events on this day :(</div>';
-                }
-            }
-        })
-</script>
+</main>
 @endsection
