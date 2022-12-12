@@ -2,7 +2,7 @@
 
 @section('backend')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">{{ $title }}</h1>
+    <h1 class="h2">Informasi {{ $title }}</h1>
 </div>
 {{-- <h1 class="mx-3 border-bottom">News</h1> --}}
 {{-- session alert confirm for insert this layout all my data --}}
@@ -27,6 +27,42 @@
         {{ session('update') }}
     </div>
     @endif
+</div>
+
+{{-- <div class="container px-5 pt-"> --}}
+    <div class="col-md-12 mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                {{-- <h1>ff</h1> --}}
+                <div class="card" style="width: 21rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted mt-3 fs-1">750</h6>
+                        <h5 class="card-title">Jumlah Stok Darah</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 21rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 mt-3 text-muted fs-1">500</h6>
+                        <h5 class="card-title">Jumlah Darah Masuk</h5>
+
+                    </div>
+                </div>
+                {{-- <h1>ff</h1> --}}
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 21rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 mt-3 text-muted fs-1">250</h6>
+                        <h5 class="card-title">Jumlah Darah Keluar</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{--
+    </div> --}}
 </div>
 
 <div class="table-responsive col-md-12">
