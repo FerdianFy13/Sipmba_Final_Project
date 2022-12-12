@@ -72,6 +72,14 @@ class BloodstockController extends Controller
     public function show($id)
     {
         //
+        $data = BloodStok::findOrFail($id);
+
+        return view('backend.blood_input.show', [
+            'title' => 'Detail Stok Darah',
+            'group' => BloodGroup::all(),
+            'component' => BloodComponent::all(),
+            'blood' => $data,
+        ]);
     }
 
     /**
@@ -83,6 +91,14 @@ class BloodstockController extends Controller
     public function edit($id)
     {
         //
+        $data = BloodStok::findOrFail($id);
+
+        return view('backend.blood_input.update', [
+            'title' => 'Update Stok Darah',
+            'group' => BloodGroup::all(),
+            'component' => BloodComponent::all(),
+            'blood' => $data,
+        ]);
     }
 
     /**
@@ -95,6 +111,20 @@ class BloodstockController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validation = [
+            'blood_group_id' => ['required'],
+            'blood_component_id' => ['required'],
+            'sum' => ['required'],
+        ];
+
+        $validationData = $request->validate($validation);
+
+        BloodStok::whereId($id)->update($validationData);
+
+        return redirect('/stok-darah')->with(
+            'update',
+            'Blood Stock successfully update'
+        );
     }
 
     /**
@@ -106,5 +136,11 @@ class BloodstockController extends Controller
     public function destroy($id)
     {
         //
+        $blood = BloodStok::findOrFail($id);
+        $blood->delete();
+        return redirect('stok-darah')->with(
+            'delete',
+            'Data destroy successfully delete'
+        );
     }
 }
