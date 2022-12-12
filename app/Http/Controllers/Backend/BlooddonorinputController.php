@@ -25,7 +25,9 @@ class BlooddonorinputController extends Controller
         //
         return view('backend.donor_data.index', [
             'title' => 'Data Identitas Diri Pendonor',
-            'blood' => BloodDonorInput::with('category')->paginate(10),
+            'blood' => BloodDonorInput::with('category')
+                ->latest()
+                ->paginate(10),
         ]);
     }
 

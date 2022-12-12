@@ -20,7 +20,9 @@ class QuiztwoController extends Controller
         //
         return view('backend.kuizioner_two.index', [
             'title' => 'Data Kuisioner Dua Pendonor',
-            'data' => Questiontwo::with('user')->paginate(10),
+            'data' => Questiontwo::with('user')
+                ->latest()
+                ->paginate(10),
         ]);
     }
 

@@ -18,7 +18,9 @@ class EventController extends Controller
         //
         return view('backend.event.index', [
             'title' => 'Event',
-            'event' => Event::all(),
+            'event' => Event::with('user')
+                ->orderBy('date', 'desc')
+                ->paginate(10),
         ]);
     }
 

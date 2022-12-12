@@ -33,7 +33,7 @@
                     benar!</p>
             </div>
             <div class="card">
-                <div class="card-header fw-bold p-3">Formulir Donor Darah - Identitas Diri</div>
+                <div class="card-header fw-bold p-3">Formulir Donor Darah - Kuisioner Tahap 2</div>
                 <div class="card-body container">
                     <form action="/kuisioner2" method="post" enctype="multipart/form-data" class="mb-5">
                         @csrf

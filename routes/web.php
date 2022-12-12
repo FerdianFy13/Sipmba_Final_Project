@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RedirectController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Backend\BlooddonorinputController;
+use App\Http\Controllers\Backend\BloodrequestController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\FeedbackController;
@@ -69,6 +70,9 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
 
     // kuizioner
     Route::resource('/kuisioner', KuizionerController::class);
+
+    // blood request data
+    Route::resource('/data-permintaan-darah', BloodrequestController::class);
 
     // officer data
     Route::resource('/data-petugas', OfficerdataController::class);
