@@ -30,13 +30,35 @@
 </div>
 
 {{-- <div class="container px-5 pt-"> --}}
+    {{-- <div class="col-md-12 mt-4">
+        <div class="card-group">
+            <div class="card me-3">
+                <div class="card-body">
+                    <h6 class="card-title text-danger fs-1">{{ $bloodStock }}</h6>
+                    <h5 class="card-text">Jumlah Stok Darah</h5>
+                </div>
+            </div>
+            <div class="card ms-3 me-3">
+                <div class="card-body">
+                    <h6 class="card-title text-danger fs-1">{{ $bloodIn }}</h6>
+                    <h5 class="card-text">Jumlah Darah Masuk</h5>
+                </div>
+            </div>
+            <div class="card ms-3">
+                <div class="card-body">
+                    <h6 class="card-title text-danger fs-1">{{ $bloodOut }}</h6>
+                    <h5 class="card-text">Jumlah Darah Keluar</h5>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
     <div class="col-md-12 mt-4">
         <div class="row">
             <div class="col-md-4">
-                {{-- <h1>ff</h1> --}}
                 <div class="card" style="width: 21rem;">
                     <div class="card-body">
-                        <h6 class="card-subtitle mb-2 text-muted mt-3 fs-1">{{ $bloodStock }}</h6>
+                        <h6 class="card-subtitle mb-2 text-danger mt-3 fs-1">{{ $bloodStock }}</h6>
                         <h5 class="card-title">Jumlah Stok Darah</h5>
 
                     </div>
@@ -45,17 +67,16 @@
             <div class="col-md-4">
                 <div class="card" style="width: 21rem;">
                     <div class="card-body">
-                        <h6 class="card-subtitle mb-2 mt-3 text-muted fs-1">{{ $bloodIn }}</h6>
+                        <h6 class="card-subtitle mb-2 mt-3 text-danger fs-1">{{ $bloodIn }}</h6>
                         <h5 class="card-title">Jumlah Darah Masuk</h5>
 
                     </div>
                 </div>
-                {{-- <h1>ff</h1> --}}
             </div>
             <div class="col-md-4">
                 <div class="card" style="width: 21rem;">
                     <div class="card-body">
-                        <h6 class="card-subtitle mb-2 mt-3 text-muted fs-1">{{ $bloodOut }}</h6>
+                        <h6 class="card-subtitle mb-2 mt-3 text-danger fs-1">{{ $bloodOut }}</h6>
                         <h5 class="card-title">Jumlah Darah Keluar</h5>
                     </div>
                 </div>

@@ -20,7 +20,9 @@ class OfficerdataController extends Controller
         //
         return view('backend.officer_data.index', [
             'title' => 'Data Petugas',
-            'datapetugas' => OfficerData::all(),
+            'datapetugas' => OfficerData::with('category')
+                ->orderBy('name', 'asc')
+                ->paginate(10),
         ]);
     }
 

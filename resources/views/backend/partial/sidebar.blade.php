@@ -2,8 +2,10 @@
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
             <a href="index.html"> <img alt="SIPMBA" src="{{ asset('auth/assets/img/logo.png') }}" class="header-logo" />
-                <span class="logo-name">SIPMBA</span>
-            </a>
+                {{-- <a href="index.html"> <img alt="SIPMBA" src="{{ asset('frontend/assets/img/logo-pmi.png') }}"
+                        class="header-logo" /> --}}
+                    <span class="logo-name">SIPMBA</span>
+                </a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Main</li>

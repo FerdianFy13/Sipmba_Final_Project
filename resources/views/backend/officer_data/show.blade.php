@@ -116,14 +116,14 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="image" class="form-label">Gambar Berita</label>
+        <label for="image" class="form-label">Gambar Petugas</label>
         <input type="hidden" name="oldImage" value="{{ $data->image }}">
         @if ($data->image)
         <img src="{{ asset('storage/' . $data->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
         @else
-        <img class="img-preview img-fluid mb-3 col-sm-5">
+        <img src="https://source.unsplash.com/1024x768?{{ $data->title }}" class="img-preview img-fluid mb-3 col-sm-5">
         @endif
-        <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"
+        <input class="form-control @error('image') is-invalid @enderror" type="hidden" id="image" name="image"
             onchange="previewImage()">
         @error('image')
         <div class="invalid-feedback">
