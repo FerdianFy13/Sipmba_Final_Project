@@ -126,7 +126,7 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">Gambar Berita</label>
+            <label for="image" class="form-label">Gambar Petugas</label>
             <img class="img-preview img-fluid mb-3 col-sm-5">
             <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"
                 onchange="previewImage()">

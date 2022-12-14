@@ -9,6 +9,7 @@ use App\Models\BloodStok;
 use App\Models\Event;
 use App\Models\Feedback;
 use App\Models\News;
+use App\Models\OfficerData;
 use App\Models\QuestionOne;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -46,12 +47,13 @@ class DatabaseSeeder extends Seeder
         $this->call(BloodgroupSeeder::class);
         $this->call(BloodcomponentSeeder::class);
 
-        // QuestionOne::factory(5)->create();
+        QuestionOne::factory(5)->create();
         Feedback::factory(15)->create();
         News::factory(15)->create();
         User::factory(15)->create();
         Event::factory(15)->create();
         BloodRequest::factory(15)->create();
         BloodStok::factory(15)->create();
+        OfficerData::factory(15)->create();
     }
 }

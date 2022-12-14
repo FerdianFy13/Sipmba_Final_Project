@@ -45,11 +45,12 @@
         <tbody>
             @foreach ($datapetugas as $data)
             <tr>
-                <td class="text-center">{{ $loop->iteration }}</td>
+                <td class="text-center">{{ ($datapetugas->currentPage() - 1) * ($datapetugas->perPage()) +
+                    $loop->iteration }}</td>
                 <td>{{ $data->name }}</td>
                 <td class="text-center">{{ $data->pmi_id }}</td>
                 <td>{{ $data->job }}</td>
-                <td>{{ $data->telepon }}</td>
+                <td class="text-center">{{ $data->telepon }}</td>
                 {{-- <td class="text-center">{{ $data->category->gender }}</td> --}}
                 <td class="text-center">
                     <a href="{{ route('data-petugas.show', $data->id) }}}}" class="badge bg-primary"><i
@@ -70,7 +71,7 @@
     </table>
 </div>
 <div class="d-flex justify-content-center mt-3 mb-3">
-    {{-- {{ $informations->links() }} --}}
+    {{ $datapetugas->links() }}
 </div>
 </div>
 @endsection
