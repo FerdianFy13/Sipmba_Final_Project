@@ -9,8 +9,7 @@
                 class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
                 <h2>Selamat Datang di PMI</h2>
                 <h2>Kabupaten Bantul</h2>
-                <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque
-                    eum quaerat.
+                <p>Siamo Tutti Fratelli , Kita Semua bersaudara.
                 </p>
                 <div class="d-flex justify-content-center justify-content-lg-start">
                     <a href="/form-pendaftaran" class="btn-get-started">Donor Sekarang</a>
