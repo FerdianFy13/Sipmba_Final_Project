@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\BloodRequest;
+use App\Models\BloodStok;
 use App\Models\Event;
 use App\Models\Feedback;
 use App\Models\News;
@@ -49,5 +51,7 @@ class DatabaseSeeder extends Seeder
         News::factory(15)->create();
         User::factory(15)->create();
         Event::factory(15)->create();
+        BloodRequest::factory(15)->create();
+        BloodStok::factory(15)->create();
     }
 }

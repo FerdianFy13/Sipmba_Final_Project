@@ -18,6 +18,9 @@ class BloodStokFactory extends Factory
     {
         return [
             //
+            'blood_group_id' => fake()->numberBetween(1, 8),
+            'blood_component_id' => fake()->numberBetween(1, 7),
+            'sum' => fake()->numberBetween(50, 150),
         ];
     }
 }

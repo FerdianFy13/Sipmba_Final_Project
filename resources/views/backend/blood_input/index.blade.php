@@ -36,7 +36,7 @@
                 {{-- <h1>ff</h1> --}}
                 <div class="card" style="width: 21rem;">
                     <div class="card-body">
-                        <h6 class="card-subtitle mb-2 text-muted mt-3 fs-1">750</h6>
+                        <h6 class="card-subtitle mb-2 text-muted mt-3 fs-1">{{ $bloodStock }}</h6>
                         <h5 class="card-title">Jumlah Stok Darah</h5>
 
                     </div>
@@ -45,7 +45,7 @@
             <div class="col-md-4">
                 <div class="card" style="width: 21rem;">
                     <div class="card-body">
-                        <h6 class="card-subtitle mb-2 mt-3 text-muted fs-1">500</h6>
+                        <h6 class="card-subtitle mb-2 mt-3 text-muted fs-1">{{ $bloodIn }}</h6>
                         <h5 class="card-title">Jumlah Darah Masuk</h5>
 
                     </div>
@@ -55,7 +55,7 @@
             <div class="col-md-4">
                 <div class="card" style="width: 21rem;">
                     <div class="card-body">
-                        <h6 class="card-subtitle mb-2 mt-3 text-muted fs-1">250</h6>
+                        <h6 class="card-subtitle mb-2 mt-3 text-muted fs-1">{{ $bloodOut }}</h6>
                         <h5 class="card-title">Jumlah Darah Keluar</h5>
                     </div>
                 </div>
@@ -82,9 +82,9 @@
             @foreach ($stock as $bloods)
             <tr>
                 <td class="text-center">{{
-                    $loop->iteration }}</td>
+                    ($stock->currentPage() - 1) * ($stock->perPage()) + $loop->iteration }}</td>
                 <td class="text-center">{{ $bloods->bloodGroup->group_name}}</td>
-                <td class="text-center">{{ $bloods->bloodComponent->component_name }}</td>
+                <td>{{ $bloods->bloodComponent->component_name }}</td>
                 {{-- <td>{{ $bloods->name_officer }}</td> --}}
                 <td class="text-center">{{ $bloods->sum }}</td>
                 <td class="text-center">{{ $bloods->updated_at->format('d/m/Y') }}</td>
@@ -107,7 +107,7 @@
     </table>
 </div>
 <div class="d-flex justify-content-center mt-3 mb-3">
-    {{-- {{ $blood_request->links() }} --}}
+    {{ $stock->links() }}
 </div>
 </div>
 @endsection

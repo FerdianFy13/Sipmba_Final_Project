@@ -18,6 +18,7 @@ class BloodGroupFactory extends Factory
     {
         return [
             //
+           
         ];
     }
 }

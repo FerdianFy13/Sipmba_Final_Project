@@ -7,6 +7,7 @@ use App\Models\BloodComponent;
 use App\Models\BloodGroup;
 use App\Models\BloodStok;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BloodstockController extends Controller
 {
@@ -18,9 +19,17 @@ class BloodstockController extends Controller
     public function index()
     {
         //
+        $data = DB::table('blood_stoks')->sum('sum');
+        $datas = DB::table('blood_requests')->sum('sum');
+
         return view('backend.blood_input.index', [
             'title' => 'Stok Darah',
-            'stock' => BloodStok::with('bloodGroup', 'bloodComponent')->get(),
+            'bloodIn' => $data,
+            'bloodOut' => $datas,
+            'bloodStock' => $data + $datas,
+            'stock' => BloodStok::with('bloodGroup', 'bloodComponent')
+                ->latest()
+                ->paginate(10),
         ]);
     }
 
