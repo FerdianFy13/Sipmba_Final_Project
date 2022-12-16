@@ -101,9 +101,9 @@
 <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body text-center">
                 <h5 class="card-title text-center mt-3">Grafik Jumlah Darah Masuk</h5>
-                <div id="piechart_3d" class="text-center justify-content-center mt-5"
+                <div id="piechart_3d" class="text-center justify-content-center mt-5 mx-auto"
                     style="width: 400px; height: 300px;">
 
                 </div>
@@ -114,13 +114,20 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title text-center mt-3">Grafik Jumlah Darah Keluar</h5>
-                <div id="piechart_3d2" class="text-center justify-content-center mt-5"
+                <div id="piechart_3d2" class="text-center justify-content-center mt-5 mx-auto"
                     style="width: 400px; height: 300px;">
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="card text-center">
+    <div class="card-body">
+        <h5 class="card-title text-center mt-3">Grafik Jumlah Stok Darah</h5>
+        <div id="dual_x_div" class="mx-auto mt-5" style="width: 450px; height: 470px;"></div>
+    </div>
+</div>
+{{-- <div id="dual_x_div" style="width: 900px; height: 500px;"></div> --}}
 @endsection
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
@@ -164,4 +171,39 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d2'));
         chart.draw(data, options);
       }
+</script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Month', 'A', 'B', 'AB', 'O'],
+          ['Bulan Sekarang', <?= $nowBloodTypeA; ?>, <?= $nowBloodTypeB; ?>, <?= $nowBloodTypeC; ?>, <?= $nowBloodTypeD; ?>,]
+        ]);
+
+        var options = {
+          width: 450,
+          height: 450,
+          chart: {
+            title: 'Stok Darah',
+          },
+          bars: 'vertical', // Required for Material Bar Charts.
+        //   series: {
+        //     0: { axis: 'A' }, // Bind series 0 to an axis named 'distance'.
+        //     1: { axis: 'B' },// Bind series 1 to an axis named 'brightness'.
+        //     2: { axis: 'C' },// Bind series 1 to an axis named 'brightness'.
+        //     3: { axis: 'D' },// Bind series 1 to an axis named 'brightness'.
+        //   },
+          axes: {
+            x: {
+              distance: {label: 'parsecs'}, // Bottom x-axis.
+              brightness: {side: 'top', label: 'apparent magnitude'} // Top x-axis.
+            }
+          }
+        };
+
+      var chart = new google.charts.Bar(document.getElementById('dual_x_div'));
+      chart.draw(data, options);
+    };
 </script>

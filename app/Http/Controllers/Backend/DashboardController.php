@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -49,10 +50,51 @@ class DashboardController extends Controller
             ->where('blood_group_id', '8')
             ->sum('sum');
 
+        // dd($now);
+        // dd($create);
+
         // @@chart
-        // blood stock
-        $data = DB::table('blood_stoks')->sum('sum');
-        $datas = DB::table('blood_requests')->sum('sum');
+        // @blood stock
+        // blood type A
+        $bara1 = DB::table('blood_stoks')
+            ->where('blood_group_id', '1')
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum('sum');
+        $bara2 = DB::table('blood_stoks')
+            ->where('blood_group_id', '2')
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum('sum');
+
+        // blood type B
+        $barb1 = DB::table('blood_stoks')
+            ->where('blood_group_id', '3')
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum('sum');
+        $barb2 = DB::table('blood_stoks')
+            ->where('blood_group_id', '4')
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum('sum');
+
+        // blood type AB
+        $barc1 = DB::table('blood_stoks')
+            ->where('blood_group_id', '5')
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum('sum');
+        $barc2 = DB::table('blood_stoks')
+            ->where('blood_group_id', '6')
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum('sum');
+
+        // blood type O
+        $bard1 = DB::table('blood_stoks')
+            ->where('blood_group_id', '7')
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum('sum');
+        $bard2 = DB::table('blood_stoks')
+            ->where('blood_group_id', '8')
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum('sum');
+
         // $result = $data + $datas;
 
         // dd($data, $datas);
@@ -90,6 +132,11 @@ class DashboardController extends Controller
             'reqBloodTypeB' => $reqb1 + $reqb2,
             'reqBloodTypeAB' => $reqab1 + $reqab2,
             'reqBloodTypeO' => $reqo1 + $reqo2,
+            'nowBloodTypeA' => $bara1 + $bara2,
+            'nowBloodTypeB' => $barb1 + $barb2,
+            'nowBloodTypeC' => $barc1 + $barc2,
+            'nowBloodTypeD' => $bard1 + $bard2,
+            // 'now' => $now,
             // 'test' => $bloodStock,
         ]);
     }
