@@ -49,6 +49,18 @@ class DashboardController extends Controller
             ->where('blood_group_id', '8')
             ->sum('sum');
 
+        // @chart
+        // blood stock
+        $data = DB::table('blood_stoks')->sum('sum');
+        $datas = DB::table('blood_requests')->sum('sum');
+        // $result = $data + $datas;
+
+        // dd($data, $datas);
+
+        // blood input
+
+        // blood request
+
         return view('backend.dashboard.dashboard', [
             'title' => 'Dashboard',
             'event' => $event,
@@ -57,6 +69,7 @@ class DashboardController extends Controller
             'bloodTypeB' => $bloodB1 + $bloodB2,
             'bloodTypeAB' => $bloodAB1 + $bloodAB2,
             'bloodTypeO' => $bloodO1 + $bloodO2,
+            // 'test' => $bloodStock,
         ]);
     }
 }

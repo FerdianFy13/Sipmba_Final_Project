@@ -30,7 +30,7 @@
 </div>
 
 {{-- <div class="container px-5 pt-"> --}}
-    {{-- <div class="col-md-12 mt-4">
+    <div class="col-md-12 mt-4">
         <div class="card-group">
             <div class="card me-3">
                 <div class="card-body">
@@ -51,9 +51,9 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
-    <div class="col-md-12 mt-4">
+    {{-- <div class="col-md-12 mt-4">
         <div class="row">
             <div class="col-md-4">
                 <div class="card" style="width: 21rem;">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 ms-2">
                 <div class="card" style="width: 21rem;">
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 mt-3 text-danger fs-1">{{ $bloodOut }}</h6>
@@ -81,13 +81,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         {{--
     </div> --}}
 </div>
 
 <div class="table-responsive col-md-12">
-    <a href="/stok-darah/create" class="btn btn-warning mb-2">Tambahkan Stok Darah</a>
+    <a href="/stok-darah/create" class="btn btn-warning mb-2 mt-4">Tambahkan Stok Darah</a>
     <table class="table table-striped table-secondary table-sm table-bordered border-light mt-3">
         <thead>
             <tr class="text-center">
