@@ -28,14 +28,14 @@ class BloodRequestFactory extends Factory
             'date' => fake()->dateTimeBetween('+0 days', '+2 months'),
             'time' => fake()->time(),
             'sum' => fake()->numberBetween(50, 100),
-            'blooda1' => fake()->numberBetween(20, 50),
-            'blooda2' => fake()->numberBetween(20, 50),
-            'bloodb1' => fake()->numberBetween(20, 50),
-            'bloodb2' => fake()->numberBetween(20, 50),
-            'bloodc1' => fake()->numberBetween(20, 50),
-            'bloodc2' => fake()->numberBetween(20, 50),
-            'bloodd1' => fake()->numberBetween(20, 50),
-            'bloodd2' => fake()->numberBetween(20, 50),
+            'blooda1' => fake()->numberBetween(0, 30),
+            'blooda2' => fake()->numberBetween(0, 20),
+            'bloodb1' => fake()->numberBetween(0, 30),
+            'bloodb2' => fake()->numberBetween(0, 20),
+            'bloodc1' => fake()->numberBetween(0, 30),
+            'bloodc2' => fake()->numberBetween(0, 20),
+            'bloodd1' => fake()->numberBetween(0, 30),
+            'bloodd2' => fake()->numberBetween(0, 20),
         ];
     }
 }

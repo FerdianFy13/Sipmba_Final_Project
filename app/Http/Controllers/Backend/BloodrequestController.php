@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\BloodRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BloodrequestController extends Controller
 {
@@ -15,9 +16,32 @@ class BloodrequestController extends Controller
      */
     public function index()
     {
+        $reqa1 = DB::table('blood_requests')->sum('blooda1');
+        $reqa2 = DB::table('blood_requests')->sum('blooda2');
+
+        // blood type B
+        $reqb1 = DB::table('blood_requests')->sum('bloodb1');
+        $reqb2 = DB::table('blood_requests')->sum('bloodb2');
+
+        // blood type AB
+        $reqab1 = DB::table('blood_requests')->sum('bloodc1');
+        $reqab2 = DB::table('blood_requests')->sum('bloodc2');
+
+        // blood type O
+        $reqo1 = DB::table('blood_requests')->sum('bloodd1');
+        $reqo2 = DB::table('blood_requests')->sum('bloodd2');
         //
         return view('backend.blood_request.index', [
             'title' => 'Data Permintaan Darah',
+            'result' =>
+                $reqa1 +
+                $reqa2 +
+                $reqb1 +
+                $reqb2 +
+                $reqab1 +
+                $reqab2 +
+                $reqo1 +
+                $reqo2,
             'blood_request' => BloodRequest::with('user')
                 ->orderBy('date', 'desc')
                 ->paginate(10),
