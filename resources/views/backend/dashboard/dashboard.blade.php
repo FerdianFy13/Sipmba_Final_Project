@@ -150,10 +150,10 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Blood Type', 'Result'],
-          ['A',     11],
-          ['B',      2],
-          ['AB',  2],
-          ['O', 2],
+          ['A',     <?= $reqBloodTypeA; ?>],
+          ['B',      <?= $reqBloodTypeB; ?>],
+          ['AB',  <?= $bloodTypeAB; ?>],
+          ['O', <?= $bloodTypeO; ?>],
         ]);
 
         var options = {
