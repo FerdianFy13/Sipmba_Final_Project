@@ -34,7 +34,7 @@
                     <div class="card p-4" style="background-color: #B93737; color: #fff; border-radius: 15px;">
                         <div class="card-body">
                             <h5 class="card-title text-center fw-bolder">Informasi Stok Darah</h5>
-                            <h6 class="card-subtitle text-center mb-4">24 November 2022</h6>
+                            <h6 class="card-subtitle text-center mb-4">{{ date('l, d F Y') }}</h6>
                             <div class="table-responsive-md p-3" style="background-color: #fff; border-radius: 15px;">
                                 <table class="table text-center">
                                     <thead>
@@ -49,69 +49,102 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {{-- AHF --}}
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <th class="text-start">AHF</th>
-                                            <td>15</td>
-                                            <td>25</td>
-                                            <td>30</td>
-                                            <td>40</td>
-                                            <td>110</td>
+                                            <th class="text-center">1</th>
+                                            <th class="text-start">AHF
+                                            </th>
+                                            <td>{{ $ahfBloodA }}</td>
+                                            <td>{{ $ahfBloodB }}</td>
+                                            <td>{{ $ahfBloodAB }}</td>
+                                            <td>{{ $ahfBloodO }}</td>
+                                            <td>{{ $ahfBloodA + $ahfBloodB + $ahfBloodAB + $ahfBloodO }}</td>
                                         </tr>
+                                        {{-- end AHF --}}
+
+                                        {{-- Plasma Konvaselen --}}
                                         <tr>
-                                            <th scope="row">2</th>
-                                            <th class="text-start">Plasma Konvaselen</th>
-                                            <td>15</td>
-                                            <td>25</td>
-                                            <td>30</td>
-                                            <td>40</td>
-                                            <td>110</td>
+                                            <th class="text-center">2</th>
+                                            <th class="text-start">Plasma Konvaselen
+                                            </th>
+                                            <td>{{ $plasmaBloodA }}</td>
+                                            <td>{{ $plasmaBloodB }}</td>
+                                            <td>{{ $plasmaBloodAB }}</td>
+                                            <td>{{ $plasmaBloodO }}</td>
+                                            <td>{{ $plasmaBloodA + $plasmaBloodB + $plasmaBloodAB + $plasmaBloodO }}
+                                            </td>
                                         </tr>
+                                        {{-- end Plasma Konvaselen --}}
+
+                                        {{-- FFP --}}
                                         <tr>
-                                            <th scope="row">3</th>
-                                            <th class="text-start">FFP</th>
-                                            <td>15</td>
-                                            <td>25</td>
-                                            <td>30</td>
-                                            <td>40</td>
-                                            <td>110</td>
+                                            <th class="text-center">3</th>
+                                            <th class="text-start">FFP
+                                            </th>
+                                            <td>{{ $ffpBloodA }}</td>
+                                            <td>{{ $ffpBloodB }}</td>
+                                            <td>{{ $ffpBloodAB }}</td>
+                                            <td>{{ $ffpBloodO }}</td>
+                                            <td>{{ $ffpBloodA + $ffpBloodB + $ffpBloodAB + $ffpBloodO }}
+                                            </td>
                                         </tr>
+                                        {{-- end FFP --}}
+
+                                        {{-- PCR --}}
                                         <tr>
-                                            <th scope="row">4</th>
-                                            <th class="text-start">PCR</th>
-                                            <td>15</td>
-                                            <td>25</td>
-                                            <td>30</td>
-                                            <td>40</td>
-                                            <td>110</td>
+                                            <th class="text-center">4</th>
+                                            <th class="text-start">PCR
+                                            </th>
+                                            <td>{{ $pcrBloodA }}</td>
+                                            <td>{{ $pcrBloodB }}</td>
+                                            <td>{{ $pcrBloodAB }}</td>
+                                            <td>{{ $pcrBloodO }}</td>
+                                            <td>{{ $pcrBloodA + $pcrBloodB + $pcrBloodAB + $pcrBloodO }}
+                                            </td>
                                         </tr>
+                                        {{-- end PCR --}}
+
+                                        {{-- prc --}}
                                         <tr>
-                                            <th scope="row">5</th>
-                                            <th class="text-start">PRC</th>
-                                            <td>15</td>
-                                            <td>25</td>
-                                            <td>30</td>
-                                            <td>40</td>
-                                            <td>110</td>
+                                            <th class="text-center">5</th>
+                                            <th class="text-start">PRC
+                                            </th>
+                                            <td>{{ $prcBloodA }}</td>
+                                            <td>{{ $prcBloodB }}</td>
+                                            <td>{{ $prcBloodAB }}</td>
+                                            <td>{{ $prcBloodO }}</td>
+                                            <td>{{ $prcBloodA + $prcBloodB + $prcBloodAB + $prcBloodO }}
+                                            </td>
                                         </tr>
+                                        {{-- end prc --}}
+
+                                        {{-- TC --}}
                                         <tr>
-                                            <th scope="row">6</th>
-                                            <th class="text-start">TC</th>
-                                            <td>15</td>
-                                            <td>25</td>
-                                            <td>30</td>
-                                            <td>40</td>
-                                            <td>110</td>
+                                            <th class="text-center">6</th>
+                                            <th class="text-start">TC
+                                            </th>
+                                            <td>{{ $tcBloodA }}</td>
+                                            <td>{{ $tcBloodB }}</td>
+                                            <td>{{ $tcBloodAB }}</td>
+                                            <td>{{ $tcBloodO }}</td>
+                                            <td>{{ $tcBloodA + $tcBloodB + $tcBloodAB + $tcBloodO }}
+                                            </td>
                                         </tr>
+                                        {{-- end TC --}}
+
+                                        {{-- WB --}}
                                         <tr>
-                                            <th scope="row">7</th>
-                                            <th class="text-start">WB</th>
-                                            <td>15</td>
-                                            <td>25</td>
-                                            <td>30</td>
-                                            <td>40</td>
-                                            <td>110</td>
+                                            <th class="text-center">7</th>
+                                            <th class="text-start">WB
+                                            </th>
+                                            <td>{{ $wbBloodA }}</td>
+                                            <td>{{ $wbBloodB }}</td>
+                                            <td>{{ $wbBloodAB }}</td>
+                                            <td>{{ $wbBloodO }}</td>
+                                            <td>{{ $wbBloodA + $wbBloodB + $wbBloodAB + $wbBloodO }}
+                                            </td>
                                         </tr>
+                                        {{-- end WB --}}
                                     </tbody>
                                 </table>
                             </div>
