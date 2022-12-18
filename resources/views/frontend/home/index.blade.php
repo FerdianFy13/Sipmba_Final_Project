@@ -13,7 +13,7 @@
                 </p>
                 <div class="d-flex justify-content-center justify-content-lg-start">
                     <a href="/form-pendaftaran" class="btn-get-started">Donor Sekarang</a>
-                    <a href="page-donordarah/info-stok.html" class=" btn-watch-video d-flex align-items-center">
+                    <a href="/informasi-stok-darah" class=" btn-watch-video d-flex align-items-center">
                         <i class="bi-info-circle"></i><span>Informasi Stok Darah</span></a>
                 </div>
             </div>
