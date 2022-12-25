@@ -27,16 +27,16 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory()->create([
             'nik' => '3525015201880002',
-            'name' => 'Herlina Syafhita Maharani',
-            'email' => 'herlina123@gmail.com',
-            'password' => bcrypt('admin12345'),
+            'name' => 'Administrator',
+            'email' => 'pmiadminbantul56@gmail.com',
+            'password' => bcrypt('bantuladminpmi56'),
             'role_id' => '1',
         ]);
 
         \App\Models\User::factory()->create([
-            'nik' => '3525016501830002',
-            'name' => 'Ferdian Firmansyah',
-            'email' => 'ferdianfy13@gmail.com',
+            'nik' => '3525016501830008',
+            'name' => 'Ryansyah Abraham',
+            'email' => 'ryansyahabraham@gmail.com',
             'password' => bcrypt('123459876'),
             'role_id' => '2',
         ]);
